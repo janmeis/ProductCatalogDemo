@@ -1,0 +1,17 @@
+{
+	"MENU": {
+		"BASIC_FORM": "Základní form",
+		"DASHBOARD": "Dashboard",
+		"FORM": "Formulář",
+		"MONITOR": "Monitor",
+		"VODAFONE": "Vítejte ve Vodafone",
+		"WAITING": "Čeká se na něco",
+		"WELCOME": "Sláva nazdar"
+	},
+	"WELCOME": {
+		"ADDRESS": "Adresa",
+		"EMAIL": "Mailová adresa",
+		"NAME": "Jméno",
+		"USERNAME": "Uživatelské jméno"
+	}
+}

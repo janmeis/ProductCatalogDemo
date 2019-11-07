@@ -1,0 +1,17 @@
+{
+	"MENU": {
+		"BASIC_FORM": "",
+		"DASHBOARD": "",
+		"FORM": "",
+		"MONITOR": "",
+		"VODAFONE": "",
+		"WAITING": "",
+		"WELCOME": ""
+	},
+	"WELCOME": {
+		"ADDRESS": "",
+		"EMAIL": "",
+		"NAME": "",
+		"USERNAME": ""
+	}
+}

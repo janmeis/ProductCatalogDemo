@@ -1,0 +1,46 @@
+<nz-layout class="app-layout">
+  <nz-sider class="menu-sidebar" nzCollapsible nzWidth="256px" nzBreakpoint="md" [(nzCollapsed)]="isCollapsed" [nzTrigger]="null">
+    <div class="sidebar-logo">
+      <a href="https://www.vodafone.cz/" target="_blank">
+        <img src="../assets/vf-logo.svg" alt="logo">
+        <h1>{{'MENU.VODAFONE' | translate}}</h1>
+      </a>
+    </div>
+    <ul nz-menu nzTheme="dark" nzMode="inline" [nzInlineCollapsed]="isCollapsed">
+      <li nz-submenu nzOpen [nzTitle]="'MENU.DASHBOARD' | translate" nzIcon="dashboard">
+        <ul>
+          <li nz-menu-item nzMatchRouter>
+            <a routerLink="/welcome">{{'MENU.WELCOME' | translate}}</a>
+          </li>
+          <li nz-menu-item nzMatchRouter>
+            <a>{{'MENU.MONITOR' | translate}}</a>
+          </li>
+          <li nz-menu-item nzMatchRouter>
+            <a routerLink="/waiting">{{'MENU.WAITING' | translate}}</a>
+          </li>
+        </ul>
+      </li>
+      <li nz-submenu nzOpen [nzTitle]="'MENU.FORM' | translate" nzIcon="form">
+        <ul>
+          <li nz-menu-item nzMatchRouter>
+            <a>{{'MENU.BASIC_FORM' | translate}}</a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </nz-sider>
+  <nz-layout>
+    <nz-header>
+      <div class="app-header">
+        <span class="header-trigger" (click)="isCollapsed = !isCollapsed">
+          <i class="trigger" nz-icon [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'"></i>
+        </span>
+      </div>
+    </nz-header>
+    <nz-content>
+      <div class="inner-content">
+        <router-outlet></router-outlet>
+      </div>
+    </nz-content>
+  </nz-layout>
+</nz-layout>

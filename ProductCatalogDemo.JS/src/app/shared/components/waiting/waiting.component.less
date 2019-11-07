@@ -1,0 +1,43 @@
+@loading-margin: 24px;
+
+.loading {
+  margin: -@loading-margin;
+  z-index: 100;
+  display: flex;
+  width: calc(100% + 2*@loading-margin);
+  height: calc(100% + 2*@loading-margin);
+  background-color: #e60000;
+
+  svg {
+    display: block;
+    margin: auto;
+    width: 240px;
+    height: 240px;
+
+    path {
+      stroke-dasharray: 270px;
+      stroke-dashoffset: 0;
+      stroke: white;
+      stroke-width: 4px;
+      stroke-miterlimit: 10;
+      stroke-linejoin: round;
+      vector-effect: non-scaling-stroke;
+
+      animation: logoanimation 2s cubic-bezier(0.79, 0.33, 0.13, 0.75) infinite;
+
+    }
+  }
+}
+
+
+@keyframes logoanimation {
+  0% {
+    stroke-dasharray: 270px;
+    stroke-dashoffset: 0px;
+  }
+
+  100% {
+    stroke-dasharray: 270px;
+    stroke-dashoffset: 540px;
+  }
+}
