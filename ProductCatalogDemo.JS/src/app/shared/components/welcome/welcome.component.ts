@@ -64,6 +64,10 @@ export class WelcomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.users = this.apiService.getUsers();
+    this.apiService.getProducts().pipe(first())
+      .subscribe(products => {
+        console.log(products);
+      });
   }
 
   showUser(id: number) {
@@ -75,7 +79,7 @@ export class WelcomeComponent implements OnInit {
   }
   handleCancel() {
     this.isVisible = false;
-   }
+  }
   handleOk() {
     this.isVisible = false;
   }

@@ -1,4 +1,6 @@
 <nz-table #rowSelectionTable
+          nzShowPagination
+          nzShowSizeChanger
           [nzPageSizeOptions]=[5,10,50,100]
           [nzPageSize]="5"
           [nzData]="users | async"
