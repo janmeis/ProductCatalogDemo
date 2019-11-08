@@ -10,6 +10,9 @@
       <li nz-submenu nzOpen [nzTitle]="'MENU.DASHBOARD' | translate" nzIcon="dashboard">
         <ul>
           <li nz-menu-item nzMatchRouter>
+            <a routerLink="/products">{{'MENU.PRODUCTS' | translate}}</a>
+          </li>
+          <li nz-menu-item nzMatchRouter>
             <a routerLink="/welcome">{{'MENU.WELCOME' | translate}}</a>
           </li>
           <li nz-menu-item nzMatchRouter>

@@ -54,4 +54,10 @@ export class ApiService {
 
   getProduct = (id: number): Observable<IProduct> =>
     this.http.get<IProduct>(`${this.productURL}/${id}`)
+
+  postProduct = (product: IProduct): Observable<IProduct> =>
+    this.http.post<IProduct>(this.productURL, product)
+
+  putProduct = (product: IProduct): Observable<any> =>
+    this.http.put(`${this.productURL}/${product.id}`, product)
 }

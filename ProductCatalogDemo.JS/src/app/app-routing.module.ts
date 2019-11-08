@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-
-import { WelcomeComponent } from './shared/components/welcome/welcome.component';
+import { RouterModule, Routes } from '@angular/router';
 import { WaitingComponent } from './shared/components/waiting/waiting.component';
+import { WelcomeComponent } from './shared/components/welcome/welcome.component';
+
 
 const routes: Routes = [
-  { path: '', pathMatch: 'full', redirectTo: '/welcome' },
+  { path: '', pathMatch: 'full', redirectTo: '/products' },
   { path: 'welcome', component: WelcomeComponent },
-  { path: 'waiting', component: WaitingComponent }
+  { path: 'waiting', component: WaitingComponent },
 ];
 
 @NgModule({
