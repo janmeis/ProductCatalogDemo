@@ -1,25 +1,25 @@
 {
 	"MENU": {
-		"BASIC_FORM": "Základní form",
-		"DASHBOARD": "Dashboard",
-		"FORM": "Formulář",
-		"MONITOR": "Monitor",
+		"ATTRIBUTES": "Atributy",
+		"COUNTRIES": "Země",
+		"COUNTRY_GROUPS": "Skupiny zemí",
+		"OTHERS": "Ostatní",
+		"PACKAGES": "Balíčky",
+		"PRICE_LISTS": "Ceníky",
 		"PRODUCTS": "Produkty",
-		"VODAFONE": "Vítejte ve Vodafone",
-		"WAITING": "Čeká se na něco",
-		"WELCOME": "Sláva nazdar"
+		"TEMPLATES": "Šablony",
+		"VODAFONE": "Vítejte ve Vodafone"
 	},
-	"PRODUCT-DETAIL": {
-		"BACK-TO-PRODUCTS": "Zpět",
+	"PRODUCT-DETAIL-GENERAL": {
 		"CODE": "Kód",
 		"CODE-ERROR": "Je třeba zadat kód",
-		"CODE-PLACEHOLDER": "Zadejte zadat kód",
+		"CODE-PLACEHOLDER": "Zadejte kód",
 		"DESCRIPTION": "Popis",
 		"DESCRIPTION-PLACEHOLDER": "Zde zadejte něco",
 		"EDITABILITY": "Editovatelnost",
 		"EXTCODE": "Externí kód",
 		"EXTCODE-ERROR": "Je třeba zadat externí kód",
-		"EXTCODE-PLACEHOLDER": "Zadejte zadat externí kód",
+		"EXTCODE-PLACEHOLDER": "Zadejte externí kód",
 		"EXTGROUP": "Externí skupina",
 		"EXTGROUP-ERROR": "Je třeba zadat externí skupinu",
 		"EXTGROUP-PLACEHOLDER": "Zadejte externí skupinu",
@@ -37,6 +37,13 @@
 		"TYPE-3": "Typ produktu 3",
 		"VISIBILITY": "Viditelnost"
 	},
+	"PRODUCT-DETAIL": {
+		"BACK-TO-PRODUCTS": "Zpět",
+		"TAB-CONDITIONS": "Podmínky",
+		"TAB-GENERAL": "Obecné",
+		"TAB-PRODUCT_ATTRIBUTES": "Attributy produktu",
+		"TAB-PRODUCT_VERSIONS": "Verze produktu"
+	},
 	"PRODUCT-LIST": {
 		"CODE": "Kód",
 		"DELETE-PRODUCT": "Smazat produkty",
@@ -48,11 +55,5 @@
 		"NAME": "Název",
 		"NEW-PRODUCT": "Nový produkt",
 		"VISIBILITY": "Viditelnost"
-	},
-	"WELCOME": {
-		"ADDRESS": "Adresa",
-		"EMAIL": "Mailová adresa",
-		"NAME": "Jméno",
-		"USERNAME": "Uživatelské jméno"
 	}
 }

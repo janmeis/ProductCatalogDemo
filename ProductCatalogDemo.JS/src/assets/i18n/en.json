@@ -1,16 +1,16 @@
 {
 	"MENU": {
-		"BASIC_FORM": "",
-		"DASHBOARD": "",
-		"FORM": "",
-		"MONITOR": "",
+		"ATTRIBUTES": "",
+		"COUNTRIES": "",
+		"COUNTRY_GROUPS": "",
+		"OTHERS": "",
+		"PACKAGES": "",
+		"PRICE_LISTS": "",
 		"PRODUCTS": "",
-		"VODAFONE": "",
-		"WAITING": "",
-		"WELCOME": ""
+		"TEMPLATES": "",
+		"VODAFONE": ""
 	},
-	"PRODUCT-DETAIL": {
-		"BACK-TO-PRODUCTS": "",
+	"PRODUCT-DETAIL-GENERAL": {
 		"CODE": "",
 		"CODE-ERROR": "",
 		"CODE-PLACEHOLDER": "",
@@ -37,6 +37,13 @@
 		"TYPE-3": "",
 		"VISIBILITY": ""
 	},
+	"PRODUCT-DETAIL": {
+		"BACK-TO-PRODUCTS": "",
+		"TAB-CONDITIONS": "",
+		"TAB-GENERAL": "",
+		"TAB-PRODUCT_ATTRIBUTES": "",
+		"TAB-PRODUCT_VERSIONS": ""
+	},
 	"PRODUCT-LIST": {
 		"CODE": "",
 		"DELETE-PRODUCT": "",
@@ -48,11 +55,5 @@
 		"NAME": "",
 		"NEW-PRODUCT": "",
 		"VISIBILITY": ""
-	},
-	"WELCOME": {
-		"ADDRESS": "",
-		"EMAIL": "",
-		"NAME": "",
-		"USERNAME": ""
 	}
 }

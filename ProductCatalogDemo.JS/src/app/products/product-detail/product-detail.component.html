@@ -1,0 +1,27 @@
+<nz-tabset [(nzSelectedIndex)]="selectedIndex" [nzTabBarExtraContent]="extraTemplate">
+  <nz-tab>
+    <a nz-tab-link [routerLink]="['.']" [queryParams]="{ tab: 'one' }" queryParamsHandling="merge">{{'PRODUCT-DETAIL.TAB-GENERAL' | translate}}</a>
+    <app-product-detail-general></app-product-detail-general>
+  </nz-tab>
+  <nz-tab nzDisabled="true">
+    <a class="isDisabled" nz-tab-link [routerLink]="['.']" [queryParams]="{ tab: 'two' }" queryParamsHandling="merge">{{'PRODUCT-DETAIL.TAB-PRODUCT_ATTRIBUTES' | translate}}</a>
+    Content of Tab Pane 2
+  </nz-tab>
+  <nz-tab>
+    <a nz-tab-link [routerLink]="['.']" [queryParams]="{ tab: 'three' }" queryParamsHandling="merge">{{'PRODUCT-DETAIL.TAB-PRODUCT_VERSIONS' | translate}}</a>
+    Content of Tab Pane 3
+  </nz-tab>
+  <nz-tab>
+    <a nz-tab-link [routerLink]="['.']" [queryParams]="{ tab: 'four' }" queryParamsHandling="merge">{{'PRODUCT-DETAIL.TAB-CONDITIONS' | translate}}</a>
+    Content of Tab Pane 4
+  </nz-tab>
+</nz-tabset>
+<ng-template #extraTemplate>
+  <button nz-button
+          nzType="default"
+          nzSize="large"
+          (click)="back()">
+    <i nz-icon nzType="arrow-left"></i>
+    {{'PRODUCT-DETAIL.BACK-TO-PRODUCTS' | translate}}
+  </button>
+</ng-template>

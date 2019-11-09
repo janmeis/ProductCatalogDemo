@@ -33,10 +33,10 @@ namespace ProductCatalogDemo.Api
 			{
 				options.AddPolicy(
 				  "CorsPolicy",
-				  builder => builder.WithOrigins("http://localhost:4234")
+				  builder => builder
+				  .AllowAnyOrigin()
 				  .AllowAnyMethod()
-				  .AllowAnyHeader()
-				  .AllowCredentials());
+				  .AllowAnyHeader());
 			});
 
 			services.AddControllers();

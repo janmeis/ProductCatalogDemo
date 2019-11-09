@@ -28,31 +28,47 @@
   color: #1890ff;
 }
 
+.ant-menu.ant-menu-dark {
+  .ant-menu-item-selected {
+    background-color: rgb(105, 105, 105);
+  }
+
+  a {
+    font-size: 1.2em;
+  }
+}
+
+
+@img-size: 84px;
+@logo-padding-top: 48px;
+@logo-padding-bottom: 64px;
+
 .sidebar-logo {
   position: relative;
-  height: 64px;
-  padding-left: 24px;
+  padding-top: @logo-padding-top;
+  height: calc(@logo-padding-top + @img-size + @logo-padding-bottom);
+  text-align: center;
   overflow: hidden;
   line-height: 64px;
   background: #001529;
   transition: all .3s;
-}
 
-.sidebar-logo img {
-  display: inline-block;
-  height: 32px;
-  width: 32px;
-  vertical-align: middle;
-}
+  img {
+    display: inline-block;
+    height: @img-size;
+    width: @img-size;
+    vertical-align: middle;
+  }
 
-.sidebar-logo h1 {
-  display: inline-block;
-  margin: 0 0 0 20px;
-  color: #fff;
-  font-weight: 600;
-  font-size: 14px;
-  font-family: Avenir, Helvetica Neue, Arial, Helvetica, sans-serif;
-  vertical-align: middle;
+  h1 {
+    display: inline-block;
+    margin: 0 0 0 20px;
+    color: #fff;
+    font-weight: 600;
+    font-size: 14px;
+    font-family: Avenir, Helvetica Neue, Arial, Helvetica, sans-serif;
+    vertical-align: middle;
+  }
 }
 
 nz-header {

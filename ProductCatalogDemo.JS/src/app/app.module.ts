@@ -4,10 +4,9 @@ import { NgModule } from '@angular/core';
 import { cs_CZ, NzConfig, NZ_CONFIG, NZ_I18N } from 'ng-zorro-antd';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ProductModule } from './product/product.module';
+import { OthersModule } from './others/others.module';
+import { ProductsModule } from './products/products.module';
 import { ApiService } from './services/api.service';
-import { WaitingComponent } from './shared/components/waiting/waiting.component';
-import { WelcomeComponent } from './shared/components/welcome/welcome.component';
 import { SharedModule } from './shared/shared.module';
 
 
@@ -20,13 +19,12 @@ const ngZorroConfig: NzConfig = {
 
 @NgModule({
   declarations: [
-    AppComponent,
-    WaitingComponent,
-    WelcomeComponent,
+    AppComponent
   ],
   imports: [
     AppRoutingModule,
-    ProductModule,
+    ProductsModule,
+    OthersModule,
     SharedModule,
   ],
   providers: [

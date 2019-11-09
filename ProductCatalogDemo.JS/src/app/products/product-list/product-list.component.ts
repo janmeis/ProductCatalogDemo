@@ -79,7 +79,7 @@ export class ProductListComponent implements OnInit {
   }
 
   newProductClick() {
-    this.router.navigate(['product'], { relativeTo: this.route.parent });
+    this.router.navigate(['products', 'new'], { relativeTo: this.route.parent });
   }
 
   deleteProductClick(): void {

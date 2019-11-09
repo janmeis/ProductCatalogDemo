@@ -43,7 +43,7 @@
         <td nzShowCheckbox
         [(nzChecked)]="data.checked"
         (nzCheckedChange)="checkedChange()"></td>
-        <td><a [routerLink]="['/product', data.id]">{{ data.name }}</a></td>
+        <td><a [routerLink]="['/products', data.id]">{{ data.name }}</a></td>
         <td>{{ data.code }}</td>
         <td>{{ data.extCode }}</td>
         <td>{{ data.extGroup }}</td>

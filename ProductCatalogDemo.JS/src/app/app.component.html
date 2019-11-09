@@ -1,34 +1,38 @@
 <nz-layout class="app-layout">
-  <nz-sider class="menu-sidebar" nzCollapsible nzWidth="256px" nzBreakpoint="md" [(nzCollapsed)]="isCollapsed" [nzTrigger]="null">
+  <nz-sider class="menu-sidebar" nzCollapsible nzWidth="196px" nzBreakpoint="md" [(nzCollapsed)]="isCollapsed" [nzTrigger]="null">
     <div class="sidebar-logo">
       <a href="https://www.vodafone.cz/" target="_blank">
         <img src="../assets/vf-logo.svg" alt="logo">
-        <h1>{{'MENU.VODAFONE' | translate}}</h1>
+        <h1 style="display: none;">{{'MENU.VODAFONE' | translate}}</h1>
       </a>
     </div>
     <ul nz-menu nzTheme="dark" nzMode="inline" [nzInlineCollapsed]="isCollapsed">
-      <li nz-submenu nzOpen [nzTitle]="'MENU.DASHBOARD' | translate" nzIcon="dashboard">
-        <ul>
-          <li nz-menu-item nzMatchRouter>
-            <a routerLink="/products">{{'MENU.PRODUCTS' | translate}}</a>
-          </li>
-          <li nz-menu-item nzMatchRouter>
-            <a routerLink="/welcome">{{'MENU.WELCOME' | translate}}</a>
-          </li>
-          <li nz-menu-item nzMatchRouter>
-            <a>{{'MENU.MONITOR' | translate}}</a>
-          </li>
-          <li nz-menu-item nzMatchRouter>
-            <a routerLink="/waiting">{{'MENU.WAITING' | translate}}</a>
-          </li>
-        </ul>
+      <li nz-menu-item nzMatchRouter nzDisabled="true">
+        <a routerLink="/packages">{{'MENU.PACKAGES' | translate}}</a>
       </li>
-      <li nz-submenu nzOpen [nzTitle]="'MENU.FORM' | translate" nzIcon="form">
-        <ul>
-          <li nz-menu-item nzMatchRouter>
-            <a>{{'MENU.BASIC_FORM' | translate}}</a>
-          </li>
-        </ul>
+      <li nz-menu-item nzMatchRouter nzSelected>
+        <a routerLink="/products">{{'MENU.PRODUCTS' | translate}}</a>
+      </li>
+      <li nz-menu-item nzMatchRouter nzDisabled="true">
+        <a routerLink="/attributes">{{'MENU.ATTRIBUTES' | translate}}</a>
+      </li>
+      <li nz-menu-item nzMatchRouter nzDisabled="true">
+        <a routerLink="/templates">{{'MENU.TEMPLATES' | translate}}</a>
+      </li>
+      <li nz-menu-divider></li>
+      <li nz-menu-item nzMatchRouter nzDisabled="true">
+        <a routerLink="/price-lists">{{'MENU.PRICE_LISTS' | translate}}</a>
+      </li>
+      <li nz-menu-divider></li>
+      <li nz-menu-item nzMatchRouter nzDisabled="true">
+        <a routerLink="/countries">{{'MENU.COUNTRIES' | translate}}</a>
+      </li>
+      <li nz-menu-item nzMatchRouter nzDisabled="true">
+        <a routerLink="/country-groups">{{'MENU.COUNTRY_GROUPS' | translate}}</a>
+      </li>
+      <li nz-menu-divider></li>
+      <li nz-menu-item nzMatchRouter>
+        <a routerLink="/others">{{'MENU.OTHERS' | translate}}</a>
       </li>
     </ul>
   </nz-sider>

@@ -1,12 +1,12 @@
 <form nz-form [formGroup]="validateForm" (ngSubmit)="submitForm(validateForm.value)">
   <!-- name -->
   <nz-form-item>
-    <nz-form-label [nzSpan]="7" nzRequired>{{'PRODUCT-DETAIL.NAME' | translate}}</nz-form-label>
+    <nz-form-label [nzSpan]="7" nzRequired>{{'PRODUCT-DETAIL-GENERAL.NAME' | translate}}</nz-form-label>
     <nz-form-control [nzSpan]="12" nzHasFeedback [nzErrorTip]="nameErrorTpl">
-      <input nz-input formControlName="name" [placeholder]="'PRODUCT-DETAIL.NAME-PLACEHOLDER' | translate" />
+      <input nz-input formControlName="name" [placeholder]="'PRODUCT-DETAIL-GENERAL.NAME-PLACEHOLDER' | translate" />
       <ng-template #nameErrorTpl let-control>
         <ng-container *ngIf="control.hasError('required')">
-          {{'PRODUCT-DETAIL.NAME-ERROR' | translate}}
+          {{'PRODUCT-DETAIL-GENERAL.NAME-ERROR' | translate}}
         </ng-container>
       </ng-template>
     </nz-form-control>
@@ -14,12 +14,12 @@
   <!-- /name -->
   <!-- code -->
   <nz-form-item>
-    <nz-form-label [nzSpan]="7" nzRequired>{{'PRODUCT-DETAIL.CODE' | translate}}</nz-form-label>
+    <nz-form-label [nzSpan]="7" nzRequired>{{'PRODUCT-DETAIL-GENERAL.CODE' | translate}}</nz-form-label>
     <nz-form-control [nzSpan]="4" nzHasFeedback [nzErrorTip]="codeErrorTpl">
-      <input nz-input formControlName="code" [placeholder]="'PRODUCT-DETAIL.CODE-PLACEHOLDER' | translate" />
+      <input nz-input formControlName="code" [placeholder]="'PRODUCT-DETAIL-GENERAL.CODE-PLACEHOLDER' | translate" />
       <ng-template #codeErrorTpl let-control>
         <ng-container *ngIf="control.hasError('required')">
-          {{'PRODUCT-DETAIL.CODE-ERROR' | translate}}
+          {{'PRODUCT-DETAIL-GENERAL.CODE-ERROR' | translate}}
         </ng-container>
       </ng-template>
     </nz-form-control>
@@ -27,12 +27,12 @@
   <!-- /code -->
   <!-- extCode -->
   <nz-form-item>
-    <nz-form-label [nzSpan]="7" nzRequired>{{'PRODUCT-DETAIL.EXTCODE' | translate}}</nz-form-label>
+    <nz-form-label [nzSpan]="7" nzRequired>{{'PRODUCT-DETAIL-GENERAL.EXTCODE' | translate}}</nz-form-label>
     <nz-form-control [nzSpan]="4" nzHasFeedback [nzErrorTip]="extCodeErrorTpl">
-      <input nz-input formControlName="extCode" [placeholder]="'PRODUCT-DETAIL.EXTCODE-PLACEHOLDER' | translate" />
+      <input nz-input formControlName="extCode" [placeholder]="'PRODUCT-DETAIL-GENERAL.EXTCODE-PLACEHOLDER' | translate" />
       <ng-template #extCodeErrorTpl let-control>
         <ng-container *ngIf="control.hasError('required')">
-          {{'PRODUCT-DETAIL.EXTCODE-ERROR' | translate}}
+          {{'PRODUCT-DETAIL-GENERAL.EXTCODE-ERROR' | translate}}
         </ng-container>
       </ng-template>
     </nz-form-control>
@@ -40,12 +40,12 @@
   <!-- /extCode -->
   <!-- extGroup -->
   <nz-form-item>
-    <nz-form-label [nzSpan]="7" nzRequired>{{'PRODUCT-DETAIL.EXTGROUP' | translate}}</nz-form-label>
+    <nz-form-label [nzSpan]="7" nzRequired>{{'PRODUCT-DETAIL-GENERAL.EXTGROUP' | translate}}</nz-form-label>
     <nz-form-control [nzSpan]="4" nzHasFeedback [nzErrorTip]="extGroupErrorTpl">
-      <input nz-input formControlName="extGroup" [placeholder]="'PRODUCT-DETAIL.EXTGROUP-PLACEHOLDER' | translate" />
+      <input nz-input formControlName="extGroup" [placeholder]="'PRODUCT-DETAIL-GENERAL.EXTGROUP-PLACEHOLDER' | translate" />
       <ng-template #extGroupErrorTpl let-control>
         <ng-container *ngIf="control.hasError('required')">
-          {{'PRODUCT-DETAIL.EXTGROUP-ERROR' | translate}}
+          {{'PRODUCT-DETAIL-GENERAL.EXTGROUP-ERROR' | translate}}
         </ng-container>
       </ng-template>
     </nz-form-control>
@@ -55,7 +55,7 @@
   <nz-form-item>
     <nz-form-control [nzSpan]="12" [nzOffset]="7">
       <label nz-checkbox formControlName="visibility">
-        <span>{{'PRODUCT-DETAIL.VISIBILITY' | translate}}</span>
+        <span>{{'PRODUCT-DETAIL-GENERAL.VISIBILITY' | translate}}</span>
       </label>
     </nz-form-control>
   </nz-form-item>
@@ -64,36 +64,36 @@
   <nz-form-item>
     <nz-form-control [nzSpan]="12" [nzOffset]="7">
       <label nz-checkbox formControlName="editability">
-        <span>{{'PRODUCT-DETAIL.EDITABILITY' | translate}}</span>
+        <span>{{'PRODUCT-DETAIL-GENERAL.EDITABILITY' | translate}}</span>
       </label>
     </nz-form-control>
   </nz-form-item>
   <!-- /editability -->
   <!-- type -->
   <nz-form-item>
-    <nz-form-label [nzSpan]="7">{{'PRODUCT-DETAIL.TYPE' | translate}}</nz-form-label>
+    <nz-form-label [nzSpan]="7">{{'PRODUCT-DETAIL-GENERAL.TYPE' | translate}}</nz-form-label>
     <nz-form-control [nzSpan]="2">
     <nz-radio-group formControlName="type">
-      <label nz-radio nzValue="1">{{'PRODUCT-DETAIL.TYPE-1' | translate}}</label>
-      <label nz-radio nzValue="2">{{'PRODUCT-DETAIL.TYPE-2' | translate}}</label>
-      <label nz-radio nzValue="3">{{'PRODUCT-DETAIL.TYPE-3' | translate}}</label>
+      <label nz-radio nzValue="1">{{'PRODUCT-DETAIL-GENERAL.TYPE-1' | translate}}</label>
+      <label nz-radio nzValue="2">{{'PRODUCT-DETAIL-GENERAL.TYPE-2' | translate}}</label>
+      <label nz-radio nzValue="3">{{'PRODUCT-DETAIL-GENERAL.TYPE-3' | translate}}</label>
     </nz-radio-group>
     </nz-form-control>
   </nz-form-item>
   <!-- /type -->
   <!-- longName -->
   <nz-form-item>
-    <nz-form-label [nzSpan]="7">{{'PRODUCT-DETAIL.LONGNAME' | translate}}</nz-form-label>
+    <nz-form-label [nzSpan]="7">{{'PRODUCT-DETAIL-GENERAL.LONGNAME' | translate}}</nz-form-label>
     <nz-form-control [nzSpan]="12">
-      <input nz-input formControlName="longName" [placeholder]="'PRODUCT-DETAIL.LONGNAME-PLACEHOLDER' | translate" />
+      <input nz-input formControlName="longName" [placeholder]="'PRODUCT-DETAIL-GENERAL.LONGNAME-PLACEHOLDER' | translate" />
     </nz-form-control>
   </nz-form-item>
   <!-- /longName -->
   <!-- description -->
   <nz-form-item>
-    <nz-form-label [nzSpan]="7">{{'PRODUCT-DETAIL.DESCRIPTION' | translate}}</nz-form-label>
+    <nz-form-label [nzSpan]="7">{{'PRODUCT-DETAIL-GENERAL.DESCRIPTION' | translate}}</nz-form-label>
     <nz-form-control [nzSpan]="12">
-      <textarea formControlName="description" nz-input rows="2" [placeholder]="'PRODUCT-DETAIL.DESCRIPTION-PLACEHOLDER' | translate"></textarea>
+      <textarea formControlName="description" nz-input rows="2" [placeholder]="'PRODUCT-DETAIL-GENERAL.DESCRIPTION-PLACEHOLDER' | translate"></textarea>
     </nz-form-control>
   </nz-form-item>
   <nz-form-item>
@@ -105,21 +105,15 @@
               type="submit"
               [disabled]="!validateForm.valid || validateForm.pristine">
         <i nz-icon nzType="save"></i>
-        {{'PRODUCT-DETAIL.SAVE-PRODUCT' | translate}}
+        {{'PRODUCT-DETAIL-GENERAL.SAVE-PRODUCT' | translate}}
       </button>
       <button nz-button
               nzType="danger"
               nzSize="large"
+              type="reset"
               (click)="resetForm($event)">
         <i nz-icon nzType="close"></i>
-        {{'PRODUCT-DETAIL.RESET-FROM' | translate}}
-      </button>
-      <button nz-button
-              nzType="default"
-              nzSize="large"
-              (click)="back()">
-        <i nz-icon nzType="arrow-left"></i>
-        {{'PRODUCT-DETAIL.BACK-TO-PRODUCTS' | translate}}
+        {{'PRODUCT-DETAIL-GENERAL.RESET-FROM' | translate}}
       </button>
     </nz-form-control>
   </nz-form-item>

@@ -1,19 +1,19 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { TranslateService } from '@ngx-translate/core';
-import { NzMessageService } from 'ng-zorro-antd';
-import { stringify } from 'querystring';
-import { first, flatMap } from 'rxjs/operators';
 import { ApiService, IProduct } from 'src/app/services/api.service';
-// import { marker as _ } from '@biesbjerg/ngx-translate-extract-marker';
+import { NzMessageService } from 'ng-zorro-antd';
+import { TranslateService } from '@ngx-translate/core';
+import { first, flatMap } from 'rxjs/operators';
+import { stringify } from 'querystring';
+
 
 @Component({
-  selector: 'app-product-detail',
-  templateUrl: './product-detail.component.html',
-  styleUrls: ['./product-detail.component.less']
+  selector: 'app-product-detail-general',
+  templateUrl: './product-detail-general.component.html',
+  styleUrls: ['./product-detail-general.component.less']
 })
-export class ProductDetailComponent implements OnInit {
+export class ProductDetailGeneralComponent implements OnInit {
   validateForm: FormGroup;
 
   constructor(
@@ -21,15 +21,12 @@ export class ProductDetailComponent implements OnInit {
     private apiService: ApiService,
     private fb: FormBuilder,
     private message: NzMessageService,
-    private router: Router,
     private translate: TranslateService
-  ) {
-    // _('PRODUCT-DETAIL.SUCCESS_MESSAGE');
-  }
+  ) {}
 
   ngOnInit() {
     this.validateForm = this.getValidateForm();
-    const id = this.route.snapshot.paramMap.get('id');
+    const id = this.route.snapshot.params.id;
     if (id && +id > 0) {
       this.apiService.getProduct(+id).pipe(first())
         .subscribe(product => {
@@ -37,10 +34,6 @@ export class ProductDetailComponent implements OnInit {
           console.log(product);
         });
     }
-  }
-
-  back(): void {
-    this.router.navigate(['products'], { relativeTo: this.route.parent });
   }
 
   resetForm(e: MouseEvent): void {
@@ -57,8 +50,9 @@ export class ProductDetailComponent implements OnInit {
   }
 
   submitForm(product: IProduct): void {
+    // _('PRODUCT-DETAIL-GENERAL.SUCCESS_MESSAGE');
     this.apiService.postProduct(product).pipe(
-      flatMap(() => this.translate.get('PRODUCT-DETAIL.SUCCESS_MESSAGE', { value: product.name })),
+      flatMap(() => this.translate.get('PRODUCT-DETAIL-GENERAL.SUCCESS_MESSAGE', { value: product.name })),
       first())
       .subscribe(result => {
         this.message.create('success', result);
