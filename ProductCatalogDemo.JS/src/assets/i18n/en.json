@@ -30,6 +30,7 @@
 		"NAME-PLACEHOLDER": "",
 		"RESET-FROM": "",
 		"SAVE-PRODUCT": "",
+		"SUCCESS_MESSAGE": "",
 		"TYPE": "",
 		"TYPE-1": "",
 		"TYPE-2": "",
@@ -37,7 +38,16 @@
 		"VISIBILITY": ""
 	},
 	"PRODUCT-LIST": {
-		"NEW-PRODUCT": ""
+		"CODE": "",
+		"DELETE-PRODUCT": "",
+		"DELETE_MESSAGE": "",
+		"EDITABILITY": "",
+		"EXTCODE": "",
+		"EXTGROUP": "",
+		"LONGNAME": "",
+		"NAME": "",
+		"NEW-PRODUCT": "",
+		"VISIBILITY": ""
 	},
 	"WELCOME": {
 		"ADDRESS": "",

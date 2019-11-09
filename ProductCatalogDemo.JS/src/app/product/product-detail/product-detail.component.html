@@ -103,12 +103,12 @@
               nzType="primary"
               nzSize="large"
               type="submit"
-              [disabled]="!validateForm.valid">
+              [disabled]="!validateForm.valid || validateForm.pristine">
         <i nz-icon nzType="save"></i>
         {{'PRODUCT-DETAIL.SAVE-PRODUCT' | translate}}
       </button>
       <button nz-button
-              nzType="default"
+              nzType="danger"
               nzSize="large"
               (click)="resetForm($event)">
         <i nz-icon nzType="close"></i>

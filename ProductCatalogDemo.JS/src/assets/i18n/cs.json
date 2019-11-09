@@ -30,6 +30,7 @@
 		"NAME-PLACEHOLDER": "Zadejte název produktu",
 		"RESET-FROM": "Reset",
 		"SAVE-PRODUCT": "Uložit",
+		"SUCCESS_MESSAGE": "Produkt '{{value}}' byl úspěšně uložen!",
 		"TYPE": "Typ",
 		"TYPE-1": "Typ produktu 1",
 		"TYPE-2": "Typ produktu 2",
@@ -37,7 +38,16 @@
 		"VISIBILITY": "Viditelnost"
 	},
 	"PRODUCT-LIST": {
-		"NEW-PRODUCT": "Nový produkt"
+		"CODE": "Kód",
+		"DELETE-PRODUCT": "Smazat produkty",
+		"DELETE_MESSAGE": "Opravdu chcete smazat vybrané produkty?",
+		"EDITABILITY": "Editovatelnost",
+		"EXTCODE": "Externí kód",
+		"EXTGROUP": "Externí skupina",
+		"LONGNAME": "Dlouhý název",
+		"NAME": "Název",
+		"NEW-PRODUCT": "Nový produkt",
+		"VISIBILITY": "Viditelnost"
 	},
 	"WELCOME": {
 		"ADDRESS": "Adresa",

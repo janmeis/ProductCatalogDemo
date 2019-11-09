@@ -2,6 +2,54 @@
         nzType="default"
         nzSize="large"
         (click)="newProductClick()">
-        <i nz-icon nzType="plus"></i>
-        {{'PRODUCT-LIST.NEW-PRODUCT' | translate}}
-    </button>
+  <i nz-icon nzType="plus"></i>
+  {{'PRODUCT-LIST.NEW-PRODUCT' | translate}}
+</button>
+<button nz-button
+        nzType="danger"
+        nzSize="large"
+        (click)="deleteProductClick()"
+        [disabled]="!(isAllDisplayDataChecked || isIndeterminate)">
+  <i nz-icon nzType="close"></i>
+  {{'PRODUCT-LIST.DELETE-PRODUCT' | translate}}
+</button>
+
+<nz-table #productTable
+          [nzData]="products$ | async"
+          [nzLoading]="isLoading"
+          [nzLoadingDelay]="500"
+          nzShowPagination
+          [nzPageSizeOptions]="[5,10,50,100]"
+          nzPageSize="5"
+          nzShowSizeChanger
+          (nzCurrentPageDataChange)="currentPageDataChange($event)">
+  <thead (nzSortChange)="sort($event)" nzSingleSort>
+    <tr>
+      <th nzShowCheckbox
+          [(nzChecked)]="isAllDisplayDataChecked"
+          [nzIndeterminate]="isIndeterminate"
+          (nzCheckedChange)="checkAll($event)"></th>
+      <th nzShowSort nzSortKey="name">{{'PRODUCT-LIST.NAME' | translate}}</th>
+      <th nzShowSort nzSortKey="code">{{'PRODUCT-LIST.CODE' | translate}}</th>
+      <th nzShowSort nzSortKey="extCode">{{'PRODUCT-LIST.EXTCODE' | translate}}</th>
+      <th nzShowSort nzSortKey="extGroup">{{'PRODUCT-LIST.EXTGROUP' | translate}}</th>
+      <th nzShowSort nzSortKey="longName">{{'PRODUCT-LIST.LONGNAME' | translate}}</th>
+      <th>{{'PRODUCT-LIST.VISIBILITY' | translate}}</th>
+      <th>{{'PRODUCT-LIST.EDITABILITY' | translate}}</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let data of productTable.data">
+        <td nzShowCheckbox
+        [(nzChecked)]="data.checked"
+        (nzCheckedChange)="checkedChange()"></td>
+        <td><a [routerLink]="['/product', data.id]">{{ data.name }}</a></td>
+        <td>{{ data.code }}</td>
+        <td>{{ data.extCode }}</td>
+        <td>{{ data.extGroup }}</td>
+        <td>{{ data.longName }}</td>
+        <td nzShowCheckbox [nzChecked]="data.visibility" nzDisabled="true"></td>
+        <td nzShowCheckbox [nzChecked]="data.editability" nzDisabled="true"></td>
+    </tr>
+  </tbody>
+</nz-table>

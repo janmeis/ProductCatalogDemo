@@ -8,6 +8,7 @@
     },
     "component-class-suffix": true,
     "contextual-lifecycle": true,
+    "curly": false,
     "directive-class-suffix": true,
     "directive-selector": [
       true,
@@ -21,6 +22,7 @@
       "app",
       "kebab-case"
     ],
+    "forin": false,
     "import-blacklist": [
       true,
       "rxjs/Rx"
@@ -57,7 +59,7 @@
       true,
       "ignore-params"
     ],
-    "no-non-null-assertion": true,
+    "no-non-null-assertion": false,
     "no-redundant-jsdoc": true,
     "no-switch-case-fall-through": true,
     "no-var-requires": false,
@@ -71,7 +73,6 @@
       true,
       "single"
     ],
-    "trailing-comma": false,
     "no-conflicting-lifecycle": true,
     "no-host-metadata-property": true,
     "no-input-rename": true,
@@ -82,6 +83,8 @@
     "no-outputs-metadata-property": true,
     "template-banana-in-box": true,
     "template-no-negated-async": true,
+    "trailing-comma": false,
+    "triple-equals": false,
     "use-lifecycle-interface": true,
     "use-pipe-transform-interface": true
   },
