@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { ApiService, IProduct } from 'src/app/services/api.service';
 import { NzMessageService } from 'ng-zorro-antd';
 import { TranslateService } from '@ngx-translate/core';
@@ -50,9 +50,9 @@ export class ProductDetailGeneralComponent implements OnInit {
   }
 
   submitForm(product: IProduct): void {
-    // _('PRODUCT-DETAIL-GENERAL.SUCCESS_MESSAGE');
+    // _('PRODUCT_DETAIL-GENERAL.SUCCESS_MESSAGE');
     this.apiService.postProduct(product).pipe(
-      flatMap(() => this.translate.get('PRODUCT-DETAIL-GENERAL.SUCCESS_MESSAGE', { value: product.name })),
+      flatMap(() => this.translate.get('PRODUCT_DETAIL_GENERAL.SUCCESS_MESSAGE', { value: product.name })),
       first())
       .subscribe(result => {
         this.message.create('success', result);

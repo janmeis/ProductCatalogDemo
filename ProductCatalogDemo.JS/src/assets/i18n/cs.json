@@ -10,43 +10,43 @@
 		"TEMPLATES": "Šablony",
 		"VODAFONE": "Vítejte ve Vodafone"
 	},
-	"PRODUCT-DETAIL-GENERAL": {
+	"PRODUCT_DETAIL_GENERAL": {
 		"CODE": "Kód",
-		"CODE-ERROR": "Je třeba zadat kód",
-		"CODE-PLACEHOLDER": "Zadejte kód",
+		"CODE_ERROR": "Je třeba zadat kód",
+		"CODE_PLACEHOLDER": "Zadejte kód",
 		"DESCRIPTION": "Popis",
-		"DESCRIPTION-PLACEHOLDER": "Zde zadejte něco",
+		"DESCRIPTION_PLACEHOLDER": "Zde zadejte něco",
 		"EDITABILITY": "Editovatelnost",
 		"EXTCODE": "Externí kód",
-		"EXTCODE-ERROR": "Je třeba zadat externí kód",
-		"EXTCODE-PLACEHOLDER": "Zadejte externí kód",
+		"EXTCODE_ERROR": "Je třeba zadat externí kód",
+		"EXTCODE_PLACEHOLDER": "Zadejte externí kód",
 		"EXTGROUP": "Externí skupina",
-		"EXTGROUP-ERROR": "Je třeba zadat externí skupinu",
-		"EXTGROUP-PLACEHOLDER": "Zadejte externí skupinu",
+		"EXTGROUP_ERROR": "Je třeba zadat externí skupinu",
+		"EXTGROUP_PLACEHOLDER": "Zadejte externí skupinu",
 		"LONGNAME": "Dlouhý název",
-		"LONGNAME-PLACEHOLDER": "Zadejte dlouhý název",
+		"LONGNAME_PLACEHOLDER": "Zadejte dlouhý název",
 		"NAME": "Název",
-		"NAME-ERROR": "Je třeba zadat název produktu",
-		"NAME-PLACEHOLDER": "Zadejte název produktu",
-		"RESET-FROM": "Reset",
-		"SAVE-PRODUCT": "Uložit",
+		"NAME_ERROR": "Je třeba zadat název produktu",
+		"NAME_PLACEHOLDER": "Zadejte název produktu",
+		"RESET_FROM": "Reset",
+		"SAVE_PRODUCT": "Uložit",
 		"SUCCESS_MESSAGE": "Produkt '{{value}}' byl úspěšně uložen!",
 		"TYPE": "Typ",
-		"TYPE-1": "Typ produktu 1",
-		"TYPE-2": "Typ produktu 2",
-		"TYPE-3": "Typ produktu 3",
+		"TYPE_1": "Typ produktu 1",
+		"TYPE_2": "Typ produktu 2",
+		"TYPE_3": "Typ produktu 3",
 		"VISIBILITY": "Viditelnost"
 	},
-	"PRODUCT-DETAIL": {
-		"BACK-TO-PRODUCTS": "Zpět",
-		"TAB-CONDITIONS": "Podmínky",
-		"TAB-GENERAL": "Obecné",
-		"TAB-PRODUCT_ATTRIBUTES": "Attributy produktu",
-		"TAB-PRODUCT_VERSIONS": "Verze produktu"
+	"PRODUCT_DETAIL": {
+		"BACK_TO_PRODUCTS": "Zpět",
+		"TAB_CONDITIONS": "Podmínky",
+		"TAB_GENERAL": "Obecné",
+		"TAB_PRODUCT_ATTRIBUTES": "Attributy produktu",
+		"TAB_PRODUCT_VERSIONS": "Verze produktu"
 	},
-	"PRODUCT-LIST": {
+	"PRODUCT_LIST": {
 		"CODE": "Kód",
-		"DELETE-PRODUCT": "Smazat produkty",
+		"DELETE_PRODUCT": "Smazat produkty",
 		"DELETE_MESSAGE": "Opravdu chcete smazat vybrané produkty?",
 		"DELETE_MESSAGE_TITLE": "Potvrďte smazani produktů",
 		"EDITABILITY": "Editovatelnost",
@@ -54,10 +54,10 @@
 		"EXTGROUP": "Externí skupina",
 		"LONGNAME": "Dlouhý název",
 		"NAME": "Název",
-		"NEW-PRODUCT": "Nový produkt",
+		"NEW_PRODUCT": "Nový produkt",
 		"VISIBILITY": "Viditelnost"
 	},
-	"SHARED-DIALOG": {
+	"SHARED_DIALOG": {
 		"CANCEL": "Zrušit",
 		"OK": "Ok"
 	}

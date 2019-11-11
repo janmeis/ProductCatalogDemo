@@ -10,43 +10,43 @@
 		"TEMPLATES": "",
 		"VODAFONE": ""
 	},
-	"PRODUCT-DETAIL-GENERAL": {
+	"PRODUCT_DETAIL_GENERAL": {
 		"CODE": "",
-		"CODE-ERROR": "",
-		"CODE-PLACEHOLDER": "",
+		"CODE_ERROR": "",
+		"CODE_PLACEHOLDER": "",
 		"DESCRIPTION": "",
-		"DESCRIPTION-PLACEHOLDER": "",
+		"DESCRIPTION_PLACEHOLDER": "",
 		"EDITABILITY": "",
 		"EXTCODE": "",
-		"EXTCODE-ERROR": "",
-		"EXTCODE-PLACEHOLDER": "",
+		"EXTCODE_ERROR": "",
+		"EXTCODE_PLACEHOLDER": "",
 		"EXTGROUP": "",
-		"EXTGROUP-ERROR": "",
-		"EXTGROUP-PLACEHOLDER": "",
+		"EXTGROUP_ERROR": "",
+		"EXTGROUP_PLACEHOLDER": "",
 		"LONGNAME": "",
-		"LONGNAME-PLACEHOLDER": "",
+		"LONGNAME_PLACEHOLDER": "",
 		"NAME": "",
-		"NAME-ERROR": "",
-		"NAME-PLACEHOLDER": "",
-		"RESET-FROM": "",
-		"SAVE-PRODUCT": "",
+		"NAME_ERROR": "",
+		"NAME_PLACEHOLDER": "",
+		"RESET_FROM": "",
+		"SAVE_PRODUCT": "",
 		"SUCCESS_MESSAGE": "",
 		"TYPE": "",
-		"TYPE-1": "",
-		"TYPE-2": "",
-		"TYPE-3": "",
+		"TYPE_1": "",
+		"TYPE_2": "",
+		"TYPE_3": "",
 		"VISIBILITY": ""
 	},
-	"PRODUCT-DETAIL": {
-		"BACK-TO-PRODUCTS": "",
-		"TAB-CONDITIONS": "",
-		"TAB-GENERAL": "",
-		"TAB-PRODUCT_ATTRIBUTES": "",
-		"TAB-PRODUCT_VERSIONS": ""
+	"PRODUCT_DETAIL": {
+		"BACK_TO_PRODUCTS": "",
+		"TAB_CONDITIONS": "",
+		"TAB_GENERAL": "",
+		"TAB_PRODUCT_ATTRIBUTES": "",
+		"TAB_PRODUCT_VERSIONS": ""
 	},
-	"PRODUCT-LIST": {
+	"PRODUCT_LIST": {
 		"CODE": "",
-		"DELETE-PRODUCT": "",
+		"DELETE_PRODUCT": "",
 		"DELETE_MESSAGE": "",
 		"DELETE_MESSAGE_TITLE": "",
 		"EDITABILITY": "",
@@ -54,10 +54,10 @@
 		"EXTGROUP": "",
 		"LONGNAME": "",
 		"NAME": "",
-		"NEW-PRODUCT": "",
+		"NEW_PRODUCT": "",
 		"VISIBILITY": ""
 	},
-	"SHARED-DIALOG": {
+	"SHARED_DIALOG": {
 		"CANCEL": "",
 		"OK": ""
 	}

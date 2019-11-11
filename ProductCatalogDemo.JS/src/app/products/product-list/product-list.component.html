@@ -3,7 +3,7 @@
         nzSize="large"
         (click)="newProductClick()">
   <i nz-icon nzType="plus"></i>
-  {{'PRODUCT-LIST.NEW-PRODUCT' | translate}}
+  {{'PRODUCT_LIST.NEW_PRODUCT' | translate}}
 </button>
 <button nz-button
         nzType="danger"
@@ -11,7 +11,7 @@
         (click)="isConfirmDialogVisible=true"
         [disabled]="!(isAllDisplayDataChecked || isIndeterminate)">
   <i nz-icon nzType="close"></i>
-  {{'PRODUCT-LIST.DELETE-PRODUCT' | translate}}
+  {{'PRODUCT_LIST.DELETE_PRODUCT' | translate}}
 </button>
 
 <nz-table #productTable
@@ -29,13 +29,13 @@
           [(nzChecked)]="isAllDisplayDataChecked"
           [nzIndeterminate]="isIndeterminate"
           (nzCheckedChange)="checkAll($event)"></th>
-      <th nzShowSort nzSortKey="name">{{'PRODUCT-LIST.NAME' | translate}}</th>
-      <th nzShowSort nzSortKey="code">{{'PRODUCT-LIST.CODE' | translate}}</th>
-      <th nzShowSort nzSortKey="extCode">{{'PRODUCT-LIST.EXTCODE' | translate}}</th>
-      <th nzShowSort nzSortKey="extGroup">{{'PRODUCT-LIST.EXTGROUP' | translate}}</th>
-      <th nzShowSort nzSortKey="longName">{{'PRODUCT-LIST.LONGNAME' | translate}}</th>
-      <th>{{'PRODUCT-LIST.VISIBILITY' | translate}}</th>
-      <th>{{'PRODUCT-LIST.EDITABILITY' | translate}}</th>
+      <th nzShowSort nzSortKey="name">{{'PRODUCT_LIST.NAME' | translate}}</th>
+      <th nzShowSort nzSortKey="code">{{'PRODUCT_LIST.CODE' | translate}}</th>
+      <th nzShowSort nzSortKey="extCode">{{'PRODUCT_LIST.EXTCODE' | translate}}</th>
+      <th nzShowSort nzSortKey="extGroup">{{'PRODUCT_LIST.EXTGROUP' | translate}}</th>
+      <th nzShowSort nzSortKey="longName">{{'PRODUCT_LIST.LONGNAME' | translate}}</th>
+      <th>{{'PRODUCT_LIST.VISIBILITY' | translate}}</th>
+      <th>{{'PRODUCT_LIST.EDITABILITY' | translate}}</th>
     </tr>
   </thead>
   <tbody>
@@ -53,7 +53,7 @@
     </tr>
   </tbody>
 </nz-table>
-<app-dialog-confirm [dialogTitle]="'PRODUCT-LIST.DELETE_MESSAGE_TITLE' | translate"
-                    [dialogText]="'PRODUCT-LIST.DELETE_MESSAGE' | translate"
+<app-dialog-confirm [dialogTitle]="'PRODUCT_LIST.DELETE_MESSAGE_TITLE' | translate"
+                    [dialogText]="'PRODUCT_LIST.DELETE_MESSAGE' | translate"
                     [(isVisible)]="isConfirmDialogVisible"
                     (isConfirmed)="isDeleteConfirmed()"></app-dialog-confirm>
