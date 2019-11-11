@@ -39,9 +39,9 @@
 		"SAVE_PRODUCT": "Uložit",
 		"SUCCESS_MESSAGE": "Produkt '{{value}}' byl úspěšně uložen!",
 		"TYPE": "Typ",
-		"TYPE_1": "Typ produktu 1",
-		"TYPE_2": "Typ produktu 2",
-		"TYPE_3": "Typ produktu 3",
+		"ProductType1": "Typ produktu 1",
+		"ProductType2": "Typ produktu 2",
+		"ProductType3": "Typ produktu 3",
 		"VISIBILITY": "Viditelnost"
 	},
 	"PRODUCT_LIST": {
@@ -55,7 +55,11 @@
 		"LONGNAME": "Dlouhý název",
 		"NAME": "Název",
 		"NEW_PRODUCT": "Nový produkt",
-		"VISIBILITY": "Viditelnost"
+    "ProductType1": "Typ produktu 1",
+    "ProductType2": "Typ produktu 2",
+    "ProductType3": "Typ produktu 3",
+    "TYPE": "Typ",
+    "VISIBILITY": "Viditelnost"
 	},
 	"SHARED_DIALOG": {
 		"CANCEL": "Zrušit",

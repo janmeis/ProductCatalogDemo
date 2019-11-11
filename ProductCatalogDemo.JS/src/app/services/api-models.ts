@@ -8,6 +8,12 @@ export interface IProduct {
   longName: string;
   visibility: boolean;
   editability: boolean;
-  type: string;
+  type: EProductType;
   description: string;
+}
+
+export enum EProductType {
+  ProductType1 = 1,
+  ProductType2 = 2,
+  ProductType3 = 3,
 }

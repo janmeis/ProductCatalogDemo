@@ -6,10 +6,11 @@ import { ProductDetailComponent } from './product-detail/product-detail.componen
 
 const routes: Routes = [
   {
-    path: 'products', data: { breadcrumb: 'Produkty' },
+    path: 'products', data: { breadcrumb: 'Seznam produktů' },
     children: [
       { path: '', component: ProductListComponent },
-      { path: ':id', component: ProductDetailComponent, data: { breadcrumb: 'Detail' } }
+      { path: 'new', component: ProductDetailComponent, data: { breadcrumb: 'Nový produkt' } },
+      { path: ':id', component: ProductDetailComponent, data: { breadcrumb: 'Detail produktu' } },
     ]
   },
 ];

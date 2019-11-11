@@ -1,10 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
 import { forkJoin, from, Observable } from 'rxjs';
 import { flatMap, map, tap } from 'rxjs/operators';
-import { IProduct } from 'src/app/services/api-models';
+import { EProductType, IProduct } from 'src/app/services/api-models';
 import { ApiService } from 'src/app/services/api.service';
-
 
 interface IProductCheck extends IProduct {
   checked: boolean;
@@ -21,12 +19,11 @@ export class ProductListComponent implements OnInit {
   isAllDisplayDataChecked = false;
   isIndeterminate = false;
   isConfirmDialogVisible = false;
+  EProductType = EProductType;
   private displayedProducts: IProductCheck[];
 
   constructor(
     private apiService: ApiService,
-    private route: ActivatedRoute,
-    private router: Router,
   ) { }
 
   ngOnInit() {

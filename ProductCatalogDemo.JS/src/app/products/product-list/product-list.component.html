@@ -38,6 +38,7 @@
       <th nzShowSort nzSortKey="longName">{{'PRODUCT_LIST.LONGNAME' | translate}}</th>
       <th>{{'PRODUCT_LIST.VISIBILITY' | translate}}</th>
       <th>{{'PRODUCT_LIST.EDITABILITY' | translate}}</th>
+      <th nzShowSort nzSortKey="type">{{'PRODUCT_LIST.TYPE' | translate}}</th>
     </tr>
   </thead>
   <tbody>
@@ -52,6 +53,7 @@
         <td>{{ data.longName }}</td>
         <td nzShowCheckbox [nzChecked]="data.visibility" nzDisabled="true"></td>
         <td nzShowCheckbox [nzChecked]="data.editability" nzDisabled="true"></td>
+        <td>{{ ('PRODUCT_LIST.' + EProductType[data.type]) | translate }}</td>
     </tr>
   </tbody>
 </nz-table>

@@ -35,13 +35,13 @@
 		"NAME": "",
 		"NAME_ERROR": "",
 		"NAME_PLACEHOLDER": "",
+		"ProductType1": "",
+		"ProductType2": "",
+		"ProductType3": "",
 		"RESET_FROM": "",
 		"SAVE_PRODUCT": "",
 		"SUCCESS_MESSAGE": "",
 		"TYPE": "",
-		"TYPE_1": "",
-		"TYPE_2": "",
-		"TYPE_3": "",
 		"VISIBILITY": ""
 	},
 	"PRODUCT_LIST": {
@@ -55,6 +55,10 @@
 		"LONGNAME": "",
 		"NAME": "",
 		"NEW_PRODUCT": "",
+		"ProductType1": "",
+		"ProductType2": "",
+		"ProductType3": "",
+		"TYPE": "",
 		"VISIBILITY": ""
 	},
 	"SHARED_DIALOG": {

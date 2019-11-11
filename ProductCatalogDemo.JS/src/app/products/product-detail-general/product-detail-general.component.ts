@@ -5,7 +5,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { NzMessageService } from 'ng-zorro-antd';
 import { stringify } from 'querystring';
 import { first, flatMap } from 'rxjs/operators';
-import { IProduct } from 'src/app/services/api-models';
+import { EProductType, IProduct } from 'src/app/services/api-models';
 import { ApiService } from 'src/app/services/api.service';
 
 
@@ -16,6 +16,7 @@ import { ApiService } from 'src/app/services/api.service';
 })
 export class ProductDetailGeneralComponent implements OnInit {
   validateForm: FormGroup;
+  EProductType = EProductType;
 
   constructor(
     private route: ActivatedRoute,
@@ -45,19 +46,17 @@ export class ProductDetailGeneralComponent implements OnInit {
       this.validateForm.controls[key].updateValueAndValidity();
     }
     this.validateForm.controls.id.setValue(0);
-    this.validateForm.controls.type.setValue('1');
+    this.validateForm.controls.type.setValue(EProductType.ProductType1);
     this.validateForm.controls.visibility.setValue(false);
     this.validateForm.controls.editability.setValue(false);
   }
 
   submitForm(product: IProduct): void {
-    // _('PRODUCT_DETAIL-GENERAL.SUCCESS_MESSAGE');
-
     this.apiService.postProduct(product).pipe(
       flatMap(() => this.translate.get('PRODUCT_DETAIL_GENERAL.SUCCESS_MESSAGE', { value: product.name })),
       first())
-      .subscribe(result => {
-        this.message.create('success', result);
+      .subscribe(successMessage => {
+        this.message.create('success', successMessage);
         this.validateForm.markAsPristine();
       },
         err => this.message.create('error', stringify(err))
