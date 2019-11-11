@@ -4,7 +4,7 @@ import { OthersListComponent } from './others-list/others-list.component';
 
 
 const routes: Routes = [
-  { path: 'others', component: OthersListComponent }
+  { path: 'others', component: OthersListComponent, data: { breadcrumb: 'ostatní' }, }
 ];
 
 @NgModule({

@@ -67,10 +67,6 @@ export class ProductListComponent implements OnInit {
     );
   }
 
-  newProductClick() {
-    this.router.navigate(['products', 'new'], { relativeTo: this.route.parent });
-  }
-
   isDeleteConfirmed() {
     this.isLoading = true;
     this.products$ = forkJoin(

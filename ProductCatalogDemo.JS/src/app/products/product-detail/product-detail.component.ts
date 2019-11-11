@@ -12,15 +12,11 @@ export class ProductDetailComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private router: Router,
-  ) {}
+    public router: Router,
+  ) { }
 
   ngOnInit() {
     this.selectedIndex = this.getSelectedIndex();
-  }
-
-  back(): void {
-    this.router.navigate(['products'], { relativeTo: this.route.parent });
   }
 
   private getSelectedIndex(): number {

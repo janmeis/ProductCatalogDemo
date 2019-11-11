@@ -10,6 +10,13 @@
 		"TEMPLATES": "",
 		"VODAFONE": ""
 	},
+	"PRODUCT_DETAIL": {
+		"BACK_TO_PRODUCTS": "",
+		"TAB_CONDITIONS": "",
+		"TAB_GENERAL": "",
+		"TAB_PRODUCT_ATTRIBUTES": "",
+		"TAB_PRODUCT_VERSIONS": ""
+	},
 	"PRODUCT_DETAIL_GENERAL": {
 		"CODE": "",
 		"CODE_ERROR": "",
@@ -37,18 +44,11 @@
 		"TYPE_3": "",
 		"VISIBILITY": ""
 	},
-	"PRODUCT_DETAIL": {
-		"BACK_TO_PRODUCTS": "",
-		"TAB_CONDITIONS": "",
-		"TAB_GENERAL": "",
-		"TAB_PRODUCT_ATTRIBUTES": "",
-		"TAB_PRODUCT_VERSIONS": ""
-	},
 	"PRODUCT_LIST": {
 		"CODE": "",
-		"DELETE_PRODUCT": "",
 		"DELETE_MESSAGE": "",
 		"DELETE_MESSAGE_TITLE": "",
+		"DELETE_PRODUCT": "",
 		"EDITABILITY": "",
 		"EXTCODE": "",
 		"EXTGROUP": "",

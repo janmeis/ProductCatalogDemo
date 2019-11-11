@@ -5,8 +5,13 @@ import { ProductDetailComponent } from './product-detail/product-detail.componen
 
 
 const routes: Routes = [
-  { path: 'products', component: ProductListComponent },
-  { path: 'products/:id', component: ProductDetailComponent },
+  {
+    path: 'products', data: { breadcrumb: 'Produkty' },
+    children: [
+      { path: '', component: ProductListComponent },
+      { path: ':id', component: ProductDetailComponent, data: { breadcrumb: 'Detail' } }
+    ]
+  },
 ];
 
 @NgModule({

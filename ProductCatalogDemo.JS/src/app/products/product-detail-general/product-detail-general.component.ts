@@ -7,6 +7,8 @@ import { TranslateService } from '@ngx-translate/core';
 import { first, flatMap } from 'rxjs/operators';
 import { stringify } from 'querystring';
 
+import { marker as _ } from '@biesbjerg/ngx-translate-extract-marker';
+
 
 @Component({
   selector: 'app-product-detail-general',
@@ -22,7 +24,7 @@ export class ProductDetailGeneralComponent implements OnInit {
     private fb: FormBuilder,
     private message: NzMessageService,
     private translate: TranslateService
-  ) {}
+  ) { }
 
   ngOnInit() {
     this.validateForm = this.getValidateForm();
@@ -51,6 +53,7 @@ export class ProductDetailGeneralComponent implements OnInit {
 
   submitForm(product: IProduct): void {
     // _('PRODUCT_DETAIL-GENERAL.SUCCESS_MESSAGE');
+
     this.apiService.postProduct(product).pipe(
       flatMap(() => this.translate.get('PRODUCT_DETAIL_GENERAL.SUCCESS_MESSAGE', { value: product.name })),
       first())

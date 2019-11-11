@@ -10,6 +10,13 @@
 		"TEMPLATES": "Šablony",
 		"VODAFONE": "Vítejte ve Vodafone"
 	},
+	"PRODUCT_DETAIL": {
+		"BACK_TO_PRODUCTS": "Zpět",
+		"TAB_CONDITIONS": "Podmínky",
+		"TAB_GENERAL": "Obecné",
+		"TAB_PRODUCT_ATTRIBUTES": "Attributy produktu",
+		"TAB_PRODUCT_VERSIONS": "Verze produktu"
+	},
 	"PRODUCT_DETAIL_GENERAL": {
 		"CODE": "Kód",
 		"CODE_ERROR": "Je třeba zadat kód",
@@ -37,18 +44,11 @@
 		"TYPE_3": "Typ produktu 3",
 		"VISIBILITY": "Viditelnost"
 	},
-	"PRODUCT_DETAIL": {
-		"BACK_TO_PRODUCTS": "Zpět",
-		"TAB_CONDITIONS": "Podmínky",
-		"TAB_GENERAL": "Obecné",
-		"TAB_PRODUCT_ATTRIBUTES": "Attributy produktu",
-		"TAB_PRODUCT_VERSIONS": "Verze produktu"
-	},
 	"PRODUCT_LIST": {
 		"CODE": "Kód",
-		"DELETE_PRODUCT": "Smazat produkty",
 		"DELETE_MESSAGE": "Opravdu chcete smazat vybrané produkty?",
 		"DELETE_MESSAGE_TITLE": "Potvrďte smazani produktů",
+		"DELETE_PRODUCT": "Smazat produkty",
 		"EDITABILITY": "Editovatelnost",
 		"EXTCODE": "Externí kód",
 		"EXTGROUP": "Externí skupina",
