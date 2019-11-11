@@ -1,18 +1,20 @@
-<button nz-button
-        nzType="default"
-        nzSize="large"
-        routerLink="/products/new">
-  <i nz-icon nzType="plus"></i>
-  {{'PRODUCT_LIST.NEW_PRODUCT' | translate}}
-</button>
-<button nz-button
-        nzType="danger"
-        nzSize="large"
-        (click)="isConfirmDialogVisible=true"
-        [disabled]="!(isAllDisplayDataChecked || isIndeterminate)">
-  <i nz-icon nzType="close"></i>
-  {{'PRODUCT_LIST.DELETE_PRODUCT' | translate}}
-</button>
+<div class="button-container">
+  <button nz-button
+          nzType="default"
+          nzSize="large"
+          routerLink="/products/new">
+    <i nz-icon nzType="plus"></i>
+    {{'PRODUCT_LIST.NEW_PRODUCT' | translate}}
+  </button>
+  <button nz-button
+          nzType="danger"
+          nzSize="large"
+          (click)="isConfirmDialogVisible=true"
+          [disabled]="!(isAllDisplayDataChecked || isIndeterminate)">
+    <i nz-icon nzType="close"></i>
+    {{'PRODUCT_LIST.DELETE_PRODUCT' | translate}}
+  </button>
+</div>
 
 <nz-table #productTable
           [nzData]="products$ | async"

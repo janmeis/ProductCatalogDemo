@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { forkJoin, from, Observable } from 'rxjs';
 import { flatMap, map, tap } from 'rxjs/operators';
-import { ApiService, IProduct } from 'src/app/services/api.service';
+import { IProduct } from 'src/app/services/api-models';
+import { ApiService } from 'src/app/services/api.service';
 
 
 interface IProductCheck extends IProduct {
