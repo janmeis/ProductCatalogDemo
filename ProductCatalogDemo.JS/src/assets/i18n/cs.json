@@ -48,6 +48,7 @@
 		"CODE": "Kód",
 		"DELETE-PRODUCT": "Smazat produkty",
 		"DELETE_MESSAGE": "Opravdu chcete smazat vybrané produkty?",
+		"DELETE_MESSAGE_TITLE": "Potvrďte smazani produktů",
 		"EDITABILITY": "Editovatelnost",
 		"EXTCODE": "Externí kód",
 		"EXTGROUP": "Externí skupina",
@@ -55,5 +56,9 @@
 		"NAME": "Název",
 		"NEW-PRODUCT": "Nový produkt",
 		"VISIBILITY": "Viditelnost"
+	},
+	"SHARED-DIALOG": {
+		"CANCEL": "Zrušit",
+		"OK": "Ok"
 	}
 }

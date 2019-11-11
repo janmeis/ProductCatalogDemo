@@ -1,12 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { TranslateService } from '@ngx-translate/core';
-import { NzModalService } from 'ng-zorro-antd';
 import { forkJoin, from, Observable } from 'rxjs';
 import { flatMap, map, tap } from 'rxjs/operators';
 import { ApiService, IProduct } from 'src/app/services/api.service';
-
-import { marker as _ } from '@biesbjerg/ngx-translate-extract-marker';
 
 
 interface IProductCheck extends IProduct {
@@ -23,19 +19,14 @@ export class ProductListComponent implements OnInit {
   isLoading = false;
   isAllDisplayDataChecked = false;
   isIndeterminate = false;
+  isConfirmDialogVisible = false;
   private displayedProducts: IProductCheck[];
-  private sortName: string | null = null;
-  private sortValue: string | null = null;
 
   constructor(
     private apiService: ApiService,
-    private modalService: NzModalService,
     private route: ActivatedRoute,
     private router: Router,
-    private translate: TranslateService,
-  ) {
-    _('PRODUCT-LIST.DELETE_MESSAGE');
-  }
+  ) { }
 
   ngOnInit() {
     this.isLoading = true;
@@ -61,20 +52,18 @@ export class ProductListComponent implements OnInit {
   }
 
   sort(sort: { key: string; value: string }): void {
-    this.sortName = sort.key;
-    this.sortValue = sort.value;
-    this.search();
-  }
-
-  search() {
     this.isLoading = true;
     this.products$ = this.products$.pipe(
       map(products => products.sort((a, b) =>
-        this.sortValue == 'ascend'
-          ? (a[this.sortName!] > b[this.sortName!] ? 1 : -1)
-          : (b[this.sortName!] > a[this.sortName!] ? 1 : -1)
+        sort.value == 'ascend'
+          ? (a[sort.key!] > b[sort.key!] ? 1 : -1)
+          : (b[sort.key!] > a[sort.key!] ? 1 : -1)
       )),
-      tap(() => this.isLoading = false)
+      tap(() => {
+        this.isAllDisplayDataChecked = false;
+        this.isIndeterminate = false;
+        this.isLoading = false;
+      })
     );
   }
 
@@ -82,27 +71,19 @@ export class ProductListComponent implements OnInit {
     this.router.navigate(['products', 'new'], { relativeTo: this.route.parent });
   }
 
-  deleteProductClick(): void {
-    this.translate.get('PRODUCT-LIST.DELETE_MESSAGE').subscribe(result =>
-      this.modalService.confirm({
-        nzTitle: result,
-        nzContent: '<b style="color: red;">Some descriptions</b>',
-        nzOkText: 'Yes',
-        nzOkType: 'danger',
-        nzOnOk: () => {
-          this.isLoading = true;
-          this.products$ = forkJoin(
-            from(this.displayedProducts.filter(p => p.checked).map(p => p.id)).pipe(
-              flatMap(id => this.apiService.deleteProduct(id))
-            )).pipe(
-              flatMap(() => this.getProduct$()),
-              tap(() => this.isLoading = false)
-            );
-        },
-        nzCancelText: 'No',
-        nzOnCancel: () => console.log('Cancel')
-      })
-    );
+  isDeleteConfirmed() {
+    this.isLoading = true;
+    this.products$ = forkJoin(
+      from(this.displayedProducts.filter(p => p.checked).map(p => p.id)).pipe(
+        flatMap(id => this.apiService.deleteProduct(id))
+      )).pipe(
+        flatMap(() => this.getProduct$()),
+        tap(() => {
+          this.isAllDisplayDataChecked = false;
+          this.isIndeterminate = false;
+          this.isLoading = false;
+        })
+      );
   }
 
   private getProduct$ = (): Observable<IProductCheck[]> =>

@@ -1,0 +1,10 @@
+      <nz-modal
+        [(nzVisible)]="isVisible"
+        [nzTitle]="dialogTitle"
+        [nzOkText]="'SHARED-DIALOG.OK' | translate"
+        [nzCancelText]="'SHARED-DIALOG.CANCEL' | translate"
+        nzOkType="danger"
+        (nzOnOk)="handleOk()"
+        (nzOnCancel)="isVisible=false">
+        <p>{{dialogText}}</p>
+      </nz-modal>

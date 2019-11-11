@@ -48,6 +48,7 @@
 		"CODE": "",
 		"DELETE-PRODUCT": "",
 		"DELETE_MESSAGE": "",
+		"DELETE_MESSAGE_TITLE": "",
 		"EDITABILITY": "",
 		"EXTCODE": "",
 		"EXTGROUP": "",
@@ -55,5 +56,9 @@
 		"NAME": "",
 		"NEW-PRODUCT": "",
 		"VISIBILITY": ""
+	},
+	"SHARED-DIALOG": {
+		"CANCEL": "",
+		"OK": ""
 	}
 }

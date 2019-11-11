@@ -10,6 +10,7 @@ import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { NgZorroAntdModule } from 'ng-zorro-antd';
 import { IconsProviderModule } from '../icons-provider.module';
+import { DialogConfirmComponent } from './components/dialog-confirm/dialog-confirm.component';
 
 
 // AoT requires an exported function for factories
@@ -17,7 +18,9 @@ export const HttpLoaderFactory = (httpClient: HttpClient) =>
   new TranslateHttpLoader(httpClient);
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    DialogConfirmComponent
+  ],
   imports: [
     BrowserAnimationsModule,
     BrowserModule,
@@ -41,6 +44,7 @@ export const HttpLoaderFactory = (httpClient: HttpClient) =>
     BrowserAnimationsModule,
     BrowserModule,
     CommonModule,
+    DialogConfirmComponent,
     DragDropModule,
     FormsModule,
     HttpClientModule,

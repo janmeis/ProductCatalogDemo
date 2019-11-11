@@ -8,7 +8,7 @@
 <button nz-button
         nzType="danger"
         nzSize="large"
-        (click)="deleteProductClick()"
+        (click)="isConfirmDialogVisible=true"
         [disabled]="!(isAllDisplayDataChecked || isIndeterminate)">
   <i nz-icon nzType="close"></i>
   {{'PRODUCT-LIST.DELETE-PRODUCT' | translate}}
@@ -53,3 +53,7 @@
     </tr>
   </tbody>
 </nz-table>
+<app-dialog-confirm [dialogTitle]="'PRODUCT-LIST.DELETE_MESSAGE_TITLE' | translate"
+                    [dialogText]="'PRODUCT-LIST.DELETE_MESSAGE' | translate"
+                    [(isVisible)]="isConfirmDialogVisible"
+                    (isConfirmed)="isDeleteConfirmed()"></app-dialog-confirm>
