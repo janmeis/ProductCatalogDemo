@@ -7,7 +7,6 @@ import { TranslateService } from '@ngx-translate/core';
   styleUrls: ['./app.component.less']
 })
 export class AppComponent implements OnInit {
-  isCollapsed = false;
 
   constructor(public translate: TranslateService) {
     translate.addLangs(['en', 'cs']);

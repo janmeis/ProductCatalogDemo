@@ -12,10 +12,10 @@
 	},
 	"PRODUCT_DETAIL": {
 		"BACK_TO_PRODUCTS": "",
+		"TAB-ATTRIBUTES": "",
+		"TAB-VERSIONS": "",
 		"TAB_CONDITIONS": "",
-		"TAB_GENERAL": "",
-		"TAB_PRODUCT_ATTRIBUTES": "",
-		"TAB_PRODUCT_VERSIONS": ""
+		"TAB_GENERAL": ""
 	},
 	"PRODUCT_DETAIL_GENERAL": {
 		"CODE": "",
@@ -58,6 +58,7 @@
 		"ProductType1": "",
 		"ProductType2": "",
 		"ProductType3": "",
+		"SEARCH_PRODUCT": "",
 		"TYPE": "",
 		"VISIBILITY": ""
 	},

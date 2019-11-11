@@ -1,12 +1,12 @@
 <nz-layout class="app-layout">
-  <nz-sider class="menu-sidebar" nzCollapsible nzWidth="196px" nzBreakpoint="md" [(nzCollapsed)]="isCollapsed" [nzTrigger]="null">
+  <nz-sider class="menu-sidebar" nzBreakpoint="md">
     <div class="sidebar-logo">
       <a href="https://www.vodafone.cz/" target="_blank">
         <img src="../assets/vf-logo.svg" alt="logo">
         <h1 style="display: none;">{{'MENU.VODAFONE' | translate}}</h1>
       </a>
     </div>
-    <ul nz-menu nzTheme="dark" nzMode="inline" [nzInlineCollapsed]="isCollapsed">
+    <ul nz-menu nzTheme="dark" nzMode="inline">
       <li nz-menu-item nzMatchRouter nzDisabled="true">
         <a routerLink="/packages">{{'MENU.PACKAGES' | translate}}</a>
       </li>
@@ -39,9 +39,6 @@
   <nz-layout>
     <nz-header>
       <div class="app-header">
-        <!-- <span class="header-trigger" (click)="isCollapsed = !isCollapsed">
-          <i class="trigger" nz-icon [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'"></i>
-        </span> -->
         <nz-breadcrumb [nzAutoGenerate]="true"></nz-breadcrumb>
       </div>
     </nz-header>

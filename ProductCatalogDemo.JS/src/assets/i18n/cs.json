@@ -12,10 +12,10 @@
 	},
 	"PRODUCT_DETAIL": {
 		"BACK_TO_PRODUCTS": "Zpět",
+		"TAB-ATTRIBUTES": "Attributy produktu",
+		"TAB-VERSIONS": "Verze produktu",
 		"TAB_CONDITIONS": "Podmínky",
-		"TAB_GENERAL": "Obecné",
-		"TAB_PRODUCT_ATTRIBUTES": "Attributy produktu",
-		"TAB_PRODUCT_VERSIONS": "Verze produktu"
+		"TAB_GENERAL": "Obecné"
 	},
 	"PRODUCT_DETAIL_GENERAL": {
 		"CODE": "Kód",
@@ -35,13 +35,13 @@
 		"NAME": "Název",
 		"NAME_ERROR": "Je třeba zadat název produktu",
 		"NAME_PLACEHOLDER": "Zadejte název produktu",
+		"ProductType1": "Typ produktu 1",
+		"ProductType2": "Typ produktu 2",
+		"ProductType3": "Typ produktu 3",
 		"RESET_FROM": "Reset",
 		"SAVE_PRODUCT": "Uložit",
 		"SUCCESS_MESSAGE": "Produkt '{{value}}' byl úspěšně uložen!",
 		"TYPE": "Typ",
-		"ProductType1": "Typ produktu 1",
-		"ProductType2": "Typ produktu 2",
-		"ProductType3": "Typ produktu 3",
 		"VISIBILITY": "Viditelnost"
 	},
 	"PRODUCT_LIST": {
@@ -55,11 +55,12 @@
 		"LONGNAME": "Dlouhý název",
 		"NAME": "Název",
 		"NEW_PRODUCT": "Nový produkt",
-    "ProductType1": "Typ produktu 1",
-    "ProductType2": "Typ produktu 2",
-    "ProductType3": "Typ produktu 3",
-    "TYPE": "Typ",
-    "VISIBILITY": "Viditelnost"
+		"ProductType1": "Typ produktu 1",
+		"ProductType2": "Typ produktu 2",
+		"ProductType3": "Typ produktu 3",
+		"SEARCH_PRODUCT": "Zadejte hledaný text",
+		"TYPE": "Typ",
+		"VISIBILITY": "Viditelnost"
 	},
 	"SHARED_DIALOG": {
 		"CANCEL": "Zrušit",

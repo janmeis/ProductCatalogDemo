@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { NzTableComponent } from 'ng-zorro-antd';
 import { forkJoin, from, Observable } from 'rxjs';
 import { flatMap, map, tap } from 'rxjs/operators';
 import { EProductType, IProduct } from 'src/app/services/api-models';
@@ -20,6 +21,7 @@ export class ProductListComponent implements OnInit {
   isIndeterminate = false;
   isConfirmDialogVisible = false;
   EProductType = EProductType;
+  searchValue: string;
   private displayedProducts: IProductCheck[];
 
   constructor(
@@ -50,19 +52,11 @@ export class ProductListComponent implements OnInit {
   }
 
   sort(sort: { key: string; value: string }): void {
-    this.isLoading = true;
-    this.products$ = this.products$.pipe(
-      map(products => products.sort((a, b) =>
-        sort.value == 'ascend'
-          ? (a[sort.key!] > b[sort.key!] ? 1 : -1)
-          : (b[sort.key!] > a[sort.key!] ? 1 : -1)
-      )),
-      tap(() => {
-        this.isAllDisplayDataChecked = false;
-        this.isIndeterminate = false;
-        this.isLoading = false;
-      })
-    );
+    this.search(products => products.sort((a, b) =>
+      sort.value == 'ascend'
+        ? (a[sort.key!] > b[sort.key!] ? 1 : -1)
+        : (b[sort.key!] > a[sort.key!] ? 1 : -1)
+    ));
   }
 
   isDeleteConfirmed() {
@@ -78,6 +72,23 @@ export class ProductListComponent implements OnInit {
           this.isLoading = false;
         })
       );
+  }
+
+  searchProducts(searchValue: string) {
+    this.searchValue = searchValue || '';
+    this.search(products => products.filter(p => p.name.startsWith(this.searchValue)));
+  }
+
+  private search(predicate): void {
+    this.isLoading = true;
+    this.products$ = this.getProduct$().pipe(
+      map(products => predicate(products)),
+      tap(() => {
+        this.isAllDisplayDataChecked = false;
+        this.isIndeterminate = false;
+        this.isLoading = false;
+      })
+    );
   }
 
   private getProduct$ = (): Observable<IProductCheck[]> =>

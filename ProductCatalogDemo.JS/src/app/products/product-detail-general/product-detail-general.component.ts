@@ -73,7 +73,7 @@ export class ProductDetailGeneralComponent implements OnInit {
       longName: [''],
       visibility: [false],
       editability: [false],
-      type: ['1'],
+      type: [EProductType.ProductType1],
       description: ['']
     })
 
