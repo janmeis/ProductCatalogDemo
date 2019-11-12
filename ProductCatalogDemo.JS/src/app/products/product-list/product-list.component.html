@@ -10,16 +10,14 @@
           nzType="danger"
           nzSize="large"
           (click)="isConfirmDialogVisible=true"
-          [disabled]="!(isAllDisplayDataChecked || isIndeterminate)">
+          [disabled]="!(isAllDisplayedDataChecked || isIndeterminate)">
     <i nz-icon nzType="close"></i>
     {{'PRODUCT_LIST.DELETE_PRODUCT' | translate}}
   </button>
 </div>
 
 <nz-table #productTable
-          [nzData]="products$ | async"
-          [nzLoading]="isLoading"
-          [nzLoadingDelay]="500"
+          [nzData]="allDisplayedData"
           nzShowPagination
           [nzPageSizeOptions]="[5,10,50,100]"
           nzPageSize="5"
@@ -28,7 +26,7 @@
   <thead (nzSortChange)="sort($event)" nzSingleSort>
     <tr>
       <th nzShowCheckbox
-          [(nzChecked)]="isAllDisplayDataChecked"
+          [(nzChecked)]="isAllDisplayedDataChecked"
           [nzIndeterminate]="isIndeterminate"
           (nzCheckedChange)="checkAll($event)"></th>
       <th nzShowSort nzSortKey="name">{{'PRODUCT_LIST.NAME' | translate}}</th>

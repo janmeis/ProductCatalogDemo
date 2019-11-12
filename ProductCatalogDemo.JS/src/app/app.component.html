@@ -1,3 +1,4 @@
+<div [ngClass]="{'isLoading': progress?.isLoading}"></div>
 <nz-layout class="app-layout">
   <nz-sider class="menu-sidebar" nzCollapsible nzWidth="196px" nzBreakpoint="md" [(nzCollapsed)]="isCollapsed" [nzTrigger]="null">
     <div class="sidebar-logo">
@@ -52,3 +53,4 @@
     </nz-content>
   </nz-layout>
 </nz-layout>
+<nz-spin nzSize="large" nzSimple [nzSpinning]="progress?.isLoading"></nz-spin>

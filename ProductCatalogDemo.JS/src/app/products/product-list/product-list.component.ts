@@ -3,6 +3,9 @@ import { forkJoin, from, Observable } from 'rxjs';
 import { flatMap, map, tap } from 'rxjs/operators';
 import { EProductType, IProduct } from 'src/app/services/api-models';
 import { ApiService } from 'src/app/services/api.service';
+import { ProgressService } from 'src/app/shared/services/progress.service';
+import { NzMessageService } from 'ng-zorro-antd';
+import { stringify } from 'querystring';
 
 interface IProductCheck extends IProduct {
   checked: boolean;
@@ -14,23 +17,32 @@ interface IProductCheck extends IProduct {
   styleUrls: ['./product-list.component.less']
 })
 export class ProductListComponent implements OnInit {
-  products$: Observable<IProductCheck[]>;
-  isLoading = false;
-  isAllDisplayDataChecked = false;
+  products: IProductCheck[];
+  allDisplayedData: IProductCheck[];
+  isAllDisplayedDataChecked = false;
   isIndeterminate = false;
   isConfirmDialogVisible = false;
   EProductType = EProductType;
   private displayedProducts: IProductCheck[];
+  private sortName = '';
+  private sortValue = '';
+  private searchValue = '';
 
   constructor(
     private apiService: ApiService,
+    private message: NzMessageService,
+    public progress: ProgressService,
   ) { }
 
   ngOnInit() {
-    this.isLoading = true;
-    this.products$ = this.getProduct$().pipe(
-      tap(() => this.isLoading = false)
-    );
+    this.progress.run(
+      this.getProduct$().pipe(
+        tap(products => this.products = products)))
+      .subscribe(() => {
+        this.allDisplayedData = [...this.products];
+      },
+        err => this.message.create('error', stringify(err))
+      );
   }
 
   currentPageDataChange(products: IProductCheck[]): void {
@@ -39,44 +51,55 @@ export class ProductListComponent implements OnInit {
 
   checkAll(value: boolean): void {
     this.displayedProducts.forEach(p => p.checked = value);
-    this.isAllDisplayDataChecked = value;
+    this.isAllDisplayedDataChecked = value;
     this.isIndeterminate = false;
   }
 
   checkedChange() {
     const checkedCount = this.displayedProducts.filter(p => p.checked).length;
-    this.isAllDisplayDataChecked = this.displayedProducts.length == checkedCount;
+    this.isAllDisplayedDataChecked = this.displayedProducts.length == checkedCount;
     this.isIndeterminate = checkedCount > 0 && this.displayedProducts.length > checkedCount;
   }
 
   sort(sort: { key: string; value: string }): void {
-    this.isLoading = true;
-    this.products$ = this.products$.pipe(
-      map(products => products.sort((a, b) =>
-        sort.value == 'ascend'
-          ? (a[sort.key!] > b[sort.key!] ? 1 : -1)
-          : (b[sort.key!] > a[sort.key!] ? 1 : -1)
-      )),
-      tap(() => {
-        this.isAllDisplayDataChecked = false;
-        this.isIndeterminate = false;
-        this.isLoading = false;
-      })
-    );
+    this.sortName = sort.key;
+    this.sortValue = sort.value;
+    this.search();
+  }
+
+  filter(searchValue: string): void {
+    this.searchValue = searchValue || '';
+    this.search();
+  }
+
+  search() {
+    // filter data
+    const data = this.products.filter(p => p.name.startsWith(this.searchValue));
+    // sort data
+    if (this.sortName && this.sortValue)
+      this.allDisplayedData = data.sort((a, b) =>
+        this.sortValue == 'ascend'
+          ? (a[this.sortName!] > b[this.sortName!] ? 1 : -1)
+          : (b[this.sortName!] > a[this.sortName!] ? 1 : -1)
+      );
+    else
+      this.allDisplayedData = data;
   }
 
   isDeleteConfirmed() {
-    this.isLoading = true;
-    this.products$ = forkJoin(
-      from(this.displayedProducts.filter(p => p.checked).map(p => p.id)).pipe(
-        flatMap(id => this.apiService.deleteProduct(id))
-      )).pipe(
-        flatMap(() => this.getProduct$()),
-        tap(() => {
-          this.isAllDisplayDataChecked = false;
-          this.isIndeterminate = false;
-          this.isLoading = false;
-        })
+    this.progress.run(
+      forkJoin(
+        from(this.displayedProducts.filter(p => p.checked).map(p => p.id)).pipe(
+          flatMap(id => this.apiService.deleteProduct(id))
+        )).pipe(
+          flatMap(() => this.getProduct$()),
+          tap(products => this.products = products)))
+      .subscribe(() => {
+        this.allDisplayedData = [...this.products];
+        this.isAllDisplayedDataChecked = false;
+        this.isIndeterminate = false;
+      },
+        err => this.message.create('error', stringify(err))
       );
   }
 

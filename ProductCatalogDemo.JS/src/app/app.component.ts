@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
+import { ProgressService } from './shared/services/progress.service';
 
 @Component({
   selector: 'app-root',
@@ -9,7 +10,10 @@ import { TranslateService } from '@ngx-translate/core';
 export class AppComponent implements OnInit {
   isCollapsed = false;
 
-  constructor(public translate: TranslateService) {
+  constructor(
+    public progress: ProgressService,
+    public translate: TranslateService
+  ) {
     translate.addLangs(['en', 'cs']);
     translate.setDefaultLang('cs');
   }
