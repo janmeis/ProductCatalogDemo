@@ -9,19 +9,21 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root'
 })
 export class ApiService {
+  private readonly productURL = `${environment.apiUrl}/products`;
+
   constructor(private http: HttpClient) { }
 
   getProducts = (): Observable<IProduct[]> =>
-    this.http.get<IProduct[]>(`${environment.apiUrl}/products`)
+    this.http.get<IProduct[]>(this.productURL)
 
   getProduct = (id: number): Observable<IProduct> =>
-    this.http.get<IProduct>(`${environment.apiUrl}/products/${id}`)
+    this.http.get<IProduct>(`${this.productURL}/${id}`)
 
   postProduct = (product: IProduct): Observable<any> =>
     product.id > 0
-      ? this.http.put(`${environment.apiUrl}/products/${product.id}`, product)
-      : this.http.post<IProduct>(`${environment.apiUrl}/products`, product)
+      ? this.http.put(`${this.productURL}/${product.id}`, product)
+      : this.http.post<IProduct>(this.productURL, product)
 
   deleteProduct = (id: number): Observable<IProduct> =>
-    this.http.delete<IProduct>(`${environment.apiUrl}/products/${id}`)
+    this.http.delete<IProduct>(`${this.productURL}/${id}`)
 }
