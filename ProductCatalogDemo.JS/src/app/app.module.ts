@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { OthersModule } from './others/others.module';
 import { ProductsModule } from './products/products.module';
 import { ApiService } from './services/api.service';
+import { ProgressService } from './shared/services/progress.service';
 import { SharedModule } from './shared/shared.module';
 
 
@@ -30,7 +31,8 @@ const ngZorroConfig: NzConfig = {
   providers: [
     { provide: NZ_I18N, useValue: cs_CZ },
     { provide: NZ_CONFIG, useValue: ngZorroConfig },
-    ApiService
+    ApiService,
+    ProgressService,
   ],
   bootstrap: [AppComponent]
 })

@@ -7,6 +7,7 @@ import { stringify } from 'querystring';
 import { first, flatMap } from 'rxjs/operators';
 import { EProductType, IProduct } from 'src/app/services/api-models';
 import { ApiService } from 'src/app/services/api.service';
+import { ProgressService } from 'src/app/shared/services/progress.service';
 
 
 @Component({
@@ -23,6 +24,7 @@ export class ProductDetailGeneralComponent implements OnInit {
     private apiService: ApiService,
     private fb: FormBuilder,
     private message: NzMessageService,
+    public progress: ProgressService,
     private translate: TranslateService
   ) { }
 
@@ -30,11 +32,13 @@ export class ProductDetailGeneralComponent implements OnInit {
     this.validateForm = this.getValidateForm();
     const id = this.route.snapshot.params.id;
     if (id && +id > 0) {
-      this.apiService.getProduct(+id).pipe(first())
+      this.progress.run(this.apiService.getProduct(+id))
         .subscribe(product => {
           this.mapProduct(product);
           console.log(product);
-        });
+        },
+          err => this.message.create('error', stringify(err))
+        );
     }
   }
 
@@ -52,9 +56,9 @@ export class ProductDetailGeneralComponent implements OnInit {
   }
 
   submitForm(product: IProduct): void {
-    this.apiService.postProduct(product).pipe(
-      flatMap(() => this.translate.get('PRODUCT_DETAIL_GENERAL.SUCCESS_MESSAGE', { value: product.name })),
-      first())
+    this.progress.run(
+      this.apiService.postProduct(product).pipe(
+        flatMap(() => this.translate.get('PRODUCT_DETAIL_GENERAL.SUCCESS_MESSAGE', { value: product.name }))))
       .subscribe(successMessage => {
         this.message.create('success', successMessage);
         this.validateForm.markAsPristine();
