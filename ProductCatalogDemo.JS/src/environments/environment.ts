@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   apiUrl: 'http://localhost:51501/api',
-  progressTimeSet: 2000
+  progressTimeSet: 1000
 };
 
 /*

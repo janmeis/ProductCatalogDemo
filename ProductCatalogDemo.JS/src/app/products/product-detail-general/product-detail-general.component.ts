@@ -2,9 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
-import { NzMessageService } from 'ng-zorro-antd';
+import { NzMessageService, NzNotificationService } from 'ng-zorro-antd';
 import { stringify } from 'querystring';
-import { first, flatMap } from 'rxjs/operators';
+import { flatMap } from 'rxjs/operators';
 import { EProductType, IProduct } from 'src/app/services/api-models';
 import { ApiService } from 'src/app/services/api.service';
 import { ProgressService } from 'src/app/shared/services/progress.service';
@@ -20,11 +20,12 @@ export class ProductDetailGeneralComponent implements OnInit {
   EProductType = EProductType;
 
   constructor(
-    private route: ActivatedRoute,
     private apiService: ApiService,
     private fb: FormBuilder,
     private message: NzMessageService,
+    private notification: NzNotificationService,
     public progress: ProgressService,
+    private route: ActivatedRoute,
     private translate: TranslateService
   ) { }
 
@@ -60,7 +61,7 @@ export class ProductDetailGeneralComponent implements OnInit {
       this.apiService.postProduct(product).pipe(
         flatMap(() => this.translate.get('PRODUCT_DETAIL_GENERAL.SUCCESS_MESSAGE', { value: product.name }))))
       .subscribe(successMessage => {
-        this.message.create('success', successMessage);
+        this.notification.create('success', successMessage, '');
         this.validateForm.markAsPristine();
       },
         err => this.message.create('error', stringify(err))
@@ -84,5 +85,13 @@ export class ProductDetailGeneralComponent implements OnInit {
   private mapProduct(product: IProduct): void {
     for (const key in this.validateForm.controls)
       this.validateForm.controls[key].setValue(product[key]);
+
+    const isCopy = this.route.snapshot.queryParams.copy;
+    if (isCopy) {
+      this.validateForm.controls.id.setValue(0);
+      const name = this.validateForm.controls.name.value;
+      this.validateForm.controls.name.setValue(`${name} - copy`);
+      this.validateForm.controls.name.markAsDirty();
+    }
   }
 }

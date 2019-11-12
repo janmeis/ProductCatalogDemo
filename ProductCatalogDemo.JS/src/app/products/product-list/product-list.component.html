@@ -9,10 +9,21 @@
     <button nz-button
             nzType="danger"
             nzSize="large"
-            (click)="isConfirmDialogVisible=true"
-            [disabled]="!(isAllDisplayDataChecked || isIndeterminate)">
-      <i nz-icon nzType="close"></i>
+            nz-popconfirm
+            nzPlacement="rightTop"
+            [nzTitle]="'PRODUCT_LIST.DELETE_MESSAGE' | translate"
+            (nzOnConfirm)="isDeleteConfirmed()"
+            [disabled]="!canDelete">
+      <i nz-icon nzType="delete"></i>
       {{'PRODUCT_LIST.DELETE_PRODUCT' | translate}}
+    </button>
+    <button nz-button
+            nzType="primary"
+            nzSize="large"
+            (click)="copyProduct()"
+            [disabled]="!canCopy">
+      <i nz-icon nzType="copy"></i>
+      {{'PRODUCT_LIST.COPY_PRODUCT' | translate}}
     </button>
   </div>
   <div nz-col nzSpan="6">
@@ -78,7 +89,3 @@
     </tr>
   </tbody>
 </nz-table>
-<app-dialog-confirm [dialogTitle]="'PRODUCT_LIST.DELETE_MESSAGE_TITLE' | translate"
-                    [dialogText]="'PRODUCT_LIST.DELETE_MESSAGE' | translate"
-                    [(isVisible)]="isConfirmDialogVisible"
-                    (isConfirmed)="isDeleteConfirmed()"></app-dialog-confirm>
