@@ -4,7 +4,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { NzMessageService, NzNotificationService } from 'ng-zorro-antd';
 import { stringify } from 'querystring';
 import { forkJoin, from, Observable } from 'rxjs';
-import { flatMap, map, tap } from 'rxjs/operators';
+import { flatMap, tap } from 'rxjs/operators';
 import { EProductType, IProduct } from 'src/app/services/api-models';
 import { ApiService } from 'src/app/services/api.service';
 import { ProgressService } from 'src/app/shared/services/progress.service';
@@ -29,7 +29,7 @@ export class ProductListComponent implements OnInit {
   canCopy = false;
   EProductType = EProductType;
   searchValue = '';
-  private products: IProductCheck[];
+  private products: IProduct[];
   private displayedProducts: IProductCheck[];
   private sortName = '';
   private sortValue = '';
@@ -110,18 +110,17 @@ export class ProductListComponent implements OnInit {
   }
 
   private search(): void {
-    this.products.forEach(p => p.checked = false);
     // filter data
-    let data = this.products.filter(p => p.name.startsWith(this.searchValue));
+    let products = this.products.filter(p => p.name.startsWith(this.searchValue));
     // sort data
     if (this.sortName && this.sortValue)
-      data = data.sort((a, b) =>
+      products = products.sort((a, b) =>
         this.sortValue == 'ascend'
           ? (a[this.sortName!] > b[this.sortName!] ? 1 : -1)
           : (b[this.sortName!] > a[this.sortName!] ? 1 : -1)
       );
 
-    this.allDisplayedData = [...data];
+    this.allDisplayedData = this.toCheck(products);
     this.resetCheckboxes();
   }
 
@@ -132,14 +131,16 @@ export class ProductListComponent implements OnInit {
     this.canCopy = false;
   }
 
-  private getProduct$ = (): Observable<IProductCheck[]> =>
+  private getProduct$ = (): Observable<IProduct[]> =>
     this.apiService.getProducts().pipe(
-      map((products: IProduct[]) => products.map((p: IProduct) => {
-        const pc = p as IProductCheck;
-        pc.checked = false;
-        return pc;
-      })),
       tap(products => this.products = products),
-      tap(products => this.allDisplayedData = [...products])
+      tap(products => this.allDisplayedData = this.toCheck(products))
     )
+
+  private toCheck = (products: IProduct[]): IProductCheck[] =>
+    products.map(p => {
+      const pc = p as IProductCheck;
+      pc.checked = false;
+      return pc;
+    })
 }
