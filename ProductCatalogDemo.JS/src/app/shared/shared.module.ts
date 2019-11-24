@@ -6,10 +6,12 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { RouterModule } from '@angular/router';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { NgZorroAntdModule } from 'ng-zorro-antd';
 import { IconsProviderModule } from '../icons-provider.module';
+import { BreadcrumbComponent } from './components/breadcrumb/breadcrumb.component';
 import { DialogConfirmComponent } from './components/dialog-confirm/dialog-confirm.component';
 
 
@@ -19,7 +21,8 @@ export const HttpLoaderFactory = (httpClient: HttpClient) =>
 
 @NgModule({
   declarations: [
-    DialogConfirmComponent
+    DialogConfirmComponent,
+    BreadcrumbComponent
   ],
   imports: [
     BrowserAnimationsModule,
@@ -31,6 +34,7 @@ export const HttpLoaderFactory = (httpClient: HttpClient) =>
     IconsProviderModule,
     NgZorroAntdModule,
     ReactiveFormsModule,
+    RouterModule,
     ScrollingModule,
     TranslateModule.forRoot({
       loader: {
@@ -41,6 +45,7 @@ export const HttpLoaderFactory = (httpClient: HttpClient) =>
     })
   ],
   exports: [
+    BreadcrumbComponent,
     BrowserAnimationsModule,
     BrowserModule,
     CommonModule,
@@ -51,6 +56,7 @@ export const HttpLoaderFactory = (httpClient: HttpClient) =>
     IconsProviderModule,
     NgZorroAntdModule,
     ReactiveFormsModule,
+    RouterModule,
     ScrollingModule,
     TranslateModule
   ],

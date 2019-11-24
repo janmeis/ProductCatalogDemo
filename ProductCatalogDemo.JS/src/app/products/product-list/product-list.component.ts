@@ -21,6 +21,7 @@ interface IProductCheck extends IProduct {
   styleUrls: ['./product-list.component.less']
 })
 export class ProductListComponent implements OnInit {
+  title: string;
   allDisplayedData: IProductCheck[];
   isAllDisplayedDataChecked = false;
   isIndeterminate = false;
@@ -41,9 +42,12 @@ export class ProductListComponent implements OnInit {
     public progress: ProgressService,
     private router: Router,
     private translate: TranslateService,
-  ) { }
+  ) {
+    _('PRODUCT_LIST.TITLE');
+  }
 
   ngOnInit() {
+    this.title = this.translate.instant('PRODUCT_LIST.TITLE');
     this.progress.run(
       this.getProduct$()
     ).subscribe(() => {

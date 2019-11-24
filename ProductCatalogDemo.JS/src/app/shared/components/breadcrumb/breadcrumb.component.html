@@ -1,0 +1,14 @@
+<nz-breadcrumb class="ant-breadcrumb">
+  <nz-breadcrumb-item *ngFor="let breadcrumb of breadcrumbs; last as isLast">
+    <span class="ant-breadcrumb-link">
+      <a *ngIf="!isLast" [routerLink]="[breadcrumb.url]">
+        <i *ngIf="breadcrumb.url=='';else breadcrumb_label" nz-icon type="home" theme="outline"></i>
+        <ng-template #breadcrumb_label>
+          {{ breadcrumb.label }}
+        </ng-template>
+      </a>
+      <span *ngIf="isLast">{{ breadcrumb.label }}</span>
+    </span>
+    <span class="ant-breadcrumb-separator"></span>
+  </nz-breadcrumb-item>
+</nz-breadcrumb>
