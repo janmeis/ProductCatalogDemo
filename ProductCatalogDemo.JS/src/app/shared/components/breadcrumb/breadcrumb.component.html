@@ -2,7 +2,7 @@
   <nz-breadcrumb-item *ngFor="let breadcrumb of breadcrumbs; last as isLast">
     <span class="ant-breadcrumb-link">
       <a *ngIf="!isLast" [routerLink]="[breadcrumb.url]">
-        <i *ngIf="breadcrumb.url=='';else breadcrumb_label" nz-icon type="home" theme="outline"></i>
+        <i *ngIf="breadcrumb.url=='';else breadcrumb_label" nz-icon nzType="home" nzTheme="outline"></i>
         <ng-template #breadcrumb_label>
           {{ breadcrumb.label }}
         </ng-template>
