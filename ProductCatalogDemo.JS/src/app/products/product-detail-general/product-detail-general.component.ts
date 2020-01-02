@@ -83,8 +83,7 @@ export class ProductDetailGeneralComponent implements OnInit {
     })
 
   private mapProduct(product: IProduct): void {
-    for (const key in this.validateForm.controls)
-      this.validateForm.controls[key].setValue(product[key]);
+    this.validateForm.patchValue(product);
 
     const isCopy = this.route.snapshot.queryParams.copy;
     if (isCopy) {
