@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { NzMessageService, NzNotificationService } from 'ng-zorro-antd';
 import { stringify } from 'querystring';
+import { of } from 'rxjs';
 import { flatMap } from 'rxjs/operators';
 import { EProductType, IProduct } from 'src/app/services/api-models';
 import { ApiService } from 'src/app/services/api.service';
@@ -26,6 +27,7 @@ export class ProductDetailGeneralComponent implements OnInit {
     private notification: NzNotificationService,
     public progress: ProgressService,
     private route: ActivatedRoute,
+    private router: Router,
     private translate: TranslateService
   ) { }
 
@@ -38,7 +40,12 @@ export class ProductDetailGeneralComponent implements OnInit {
           this.mapProduct(product);
           console.log(product);
         },
-          err => this.message.create('error', stringify(err))
+          err => {
+            console.log(err);
+            this.progress.run(
+              of(this.router.navigate(['/products']))
+            ).subscribe();
+          }
         );
     }
   }
